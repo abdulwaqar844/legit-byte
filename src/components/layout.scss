@@ -1,7 +1,30 @@
 //Here you can customize bootstrap
-$primary: #663399;
 
+$primary: #d40000;
+$secondary: #fff;
+
+.btn {
+  border: 1px solid #d40000;
+}
+@media (max-width: 576px){
+    .heroimage {
+        display: none !important;
+    }
+}
+.nav-item {
+  color: #2f3640;
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  margin: 0rem 1.2rem;
+}
+.nav-link {
+  color: #2f3640 !important;
+}
+.heroimage{
+    margin-top: -100px;
+}
+body {
+  background-color: #fff;
+}
 @import "~bootstrap/scss/bootstrap";
-
-
-
