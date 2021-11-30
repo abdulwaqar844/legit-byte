@@ -7,6 +7,7 @@ import HeroImage from "./../images/hero.svg"
 import Mobile from "./../images/mobile.svg"
 import Consult from "./../images/consult.svg"
 import Server from "./../images/server.svg"
+import NEWS from "./../images/unsplash_OwvRB-M3GwE.png"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -125,37 +126,52 @@ const IndexPage = () => (
           </div>
         </div>
       </div>
-      <div className="container-sm">
-        {" "}
+      <div className="container pb-4">
         <div className="row  pt-4 mt-3">
-          <h2>Latest News From Blog</h2>
-        </div>
-        <div className="col-md-6">
-          <p className="bg-light h4">Technology</p>
-          <p className="title">Facebook is changing its name to Meta</p>
-          <p>24 November 2021</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-            mauris porta ultrices non massa vitae dignissim nunc. Amet netus
-            imperdiet sed sit leo, consectetur vitae, cursus.
-          </p>
-        </div>
-        <div className="col-md-6">
-          <div className="row">
-            <h3>Popular Post</h3>
+          <h2 className="text-center pb-4">
+            Latest News From <span className="text-primary">Blog</span>
+          </h2>
+
+          <div className="col-md-6 border" style={{background:'#fff'}}>
+            <p className="bg-light h4">Technology</p>
+            <p className="title">Facebook is changing its name to Meta</p>
+            <p>24 November 2021</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+              mauris porta ultrices non massa vitae dignissim nunc. Amet netus
+              imperdiet sed sit leo, consectetur vitae, cursus.
+            </p>
           </div>
-          <div className="row">
-            <div className='col'>   <p className="bg-light h4">Technology</p>
-          <p className="title">Facebook is changing its name to Meta</p>
-          <p>24 November 2021</p></div><div className='col'>   <p className="bg-light h4">Technology</p>
-          <p className="title">Facebook is changing its name to Meta</p>
-          <p>24 November 2021</p></div><div className='col'>   <p className="bg-light h4">Technology</p>
-          <p className="title">Facebook is changing its name to Meta</p>
-          <p>24 November 2021</p></div><div className='col'>   <p className="bg-light h4">Technology</p>
-          <p className="title">Facebook is changing its name to Meta</p>
-          <p>24 November 2021</p></div>
+          <div className="col-md-6">
+            <h3 className="text-center">Popular Post</h3>
+
+            <div className="row">
+              <div className="col-md-6 border ">
+                <p className="bg-light h4">Technology</p>
+                <p className="title">Facebook is changing its name to Meta</p>
+                <p>24 November 2021</p>
+              </div>
+              <div className="col-md-6 border">
+                {" "}
+                <p className="bg-light h4">Technology</p>
+                <p className="title">Facebook is changing its name to Meta</p>
+                <p>24 November 2021</p>
+              </div>
+              <div className="col-md-6 border">
+                {" "}
+                <p className="bg-light h4">Technology</p>
+                <p className="title">Facebook is changing its name to Meta</p>
+                <p>24 November 2021</p>
+              </div>
+              <div className="col-md-6 border">
+                {" "}
+                <p className="bg-light h4">Technology</p>
+                <p className="title">Facebook is changing its name to Meta</p>
+                <p>24 November 2021</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </div>{" "}
       </div>
     </div>
   </Layout>
