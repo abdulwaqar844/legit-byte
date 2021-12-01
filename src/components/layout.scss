@@ -6,10 +6,10 @@ $secondary: #fff;
 .btn {
   border: 1px solid #d40000;
 }
-@media (max-width: 768px){
-    .heroimage {
-        display: none !important;
-    }
+@media (max-width: 768px) {
+  .heroimage {
+    display: none !important;
+  }
 }
 .nav-item {
   color: #2f3640;
@@ -21,8 +21,36 @@ $secondary: #fff;
 .nav-link {
   color: #2f3640 !important;
 }
-.heroimage{
-    margin-top: -100px;
+.heroimage {
+  margin-top: -100px;
+}
+@media (max-width: 576px) {
+  .career {
+    height: 60vh;
+  }
+  .mask {
+    height: 50vh;
+  }
+  .flex-small-column {
+    flex-direction: column !important;
+}
+  .mt-sm-2 {
+    margin: 0.40rem  !important;
+  } .mb-sm-2 {
+    margin: 0.40rem  !important;
+  }
+}
+
+.career {
+  background-image: url("./../images/career.png");
+  height: 80vh;
+}
+.mask {
+  background: rgba(0, 0, 0, 0.6);
+  height: 80vh;
+}
+
+@media (max-width: 576px) {
 }
 body {
   background-color: #fff;

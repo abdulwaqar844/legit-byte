@@ -1,4 +1,5 @@
 import React from "react"
+import { FaFacebook} from 'react-icons'
 const footer = () => {
   return (
     <div className="container-fluid bg-primary text-light pt-3 pb-3">
@@ -14,10 +15,11 @@ const footer = () => {
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Follow US</h2>
           <div className="d-flex flex-row">
-            {" "}
-            <p>Twitter</p>
-            <p>Twitter</p>
-            <p>Twitter</p>
+          
+            <FaFacebook/>
+            <FaFacebook/>
+            <FaFacebook/>
+
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
