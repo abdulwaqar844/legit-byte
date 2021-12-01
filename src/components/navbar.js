@@ -79,7 +79,7 @@ const Navbar = ({ siteTitle }) => {
               <ExactNavLink to="/careers">CAREERS</ExactNavLink>
             </li>{" "}
             <li className="nav-item">
-              <ExactNavLink to="/about">BLOG</ExactNavLink>
+              <ExactNavLink to="/blog">BLOG</ExactNavLink>
             </li>{" "}
             <li className="nav-item ">
               <ExactNavLink className="p-0 " to="/get-start">

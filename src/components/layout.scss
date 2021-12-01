@@ -2,6 +2,7 @@
 
 $primary: #d40000;
 $secondary: #fff;
+$dark:#13181C;
 
 .btn {
   border: 1px solid #d40000;
@@ -42,6 +43,10 @@ $secondary: #fff;
 }
 
 .career {
+  background-image: url("./../images/career.png");
+  height: 80vh;
+}
+.blog{
   background-image: url("./../images/career.png");
   height: 80vh;
 }

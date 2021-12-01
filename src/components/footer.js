@@ -14,7 +14,7 @@ const footer = () => {
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Follow US</h2>
-          <div className="d-flex flex-row">
+          <div className="d-flex flex-row justify-content-between">
           
             <FaFacebook/>
             <FaTwitter/>

@@ -4,7 +4,7 @@ import CareerImage from "./../images/career.png"
 import Layout from "./../components/layout"
 import Seo from "./../components/seo"
 
-const AboutPage = () => (
+const Careers = () => (
   <Layout>
     <Seo title="Career| Legit Byte" />
     <div className="container-fluid ">
@@ -143,4 +143,4 @@ const AboutPage = () => (
   </Layout>
 )
 
-export default AboutPage
+export default Careers
