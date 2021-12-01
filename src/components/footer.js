@@ -57,7 +57,7 @@ const footer = () => {
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Get in touch</h2>
-          <a href="mailto@info@loremipsum.com">info@loremipsum.com</a>
+          <a href="mailto@info@loremipsum.com" className='text-light'>info@loremipsum.com</a>
         </div>
       </div>
       <hr />
