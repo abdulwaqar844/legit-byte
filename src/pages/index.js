@@ -7,7 +7,7 @@ import HeroImage from "./../images/hero.svg"
 import Mobile from "./../images/mobile.svg"
 import Consult from "./../images/consult.svg"
 import Server from "./../images/server.svg"
-import NEWS from "./../images/unsplash_OwvRB-M3GwE.png"
+import { BsFillCircleFill } from "react-icons/bs"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -132,46 +132,72 @@ const IndexPage = () => (
             Latest News From <span className="text-primary">Blog</span>
           </h2>
 
-          <div className="col-md-6 border" style={{background:'#fff'}}>
-            <p className="bg-light h4">Technology</p>
-            <p className="title">Facebook is changing its name to Meta</p>
-            <p>24 November 2021</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              mauris porta ultrices non massa vitae dignissim nunc. Amet netus
-              imperdiet sed sit leo, consectetur vitae, cursus.
-            </p>
+          <div className="col-md-6 border pt-2">
+            <div class="card bg-dark text-white ">
+              <img
+                style={{ opacity: 0.6 }}
+                src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
+                class="card-img"
+                alt="..."
+                width="auto"
+                height="380px"
+              />
+              <div class="card-img-overlay d-flex flex-column justify-content-end">
+                <h5 class="card-title">
+                  Facebook is changing its name to Meta
+                </h5>
+                <p class="card-text">24 November 2021</p>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
           </div>
           <div className="col-md-6">
             <h3 className="text-center">Popular Post</h3>
 
-            <div className="row">
-              <div className="col-md-6 border ">
-                <p className="bg-light h4">Technology</p>
-                <p className="title">Facebook is changing its name to Meta</p>
+            <div className="row pt-4">
+              <div className="col-md-6 border pt-2 pb-1">
+                <a href="#" className="btn btn-outline-dark">
+                  <BsFillCircleFill color="blue" /> Technology
+                </a>
+                <h5 className="card-title pt-3">
+                  Facebook is changing its name to Meta
+                </h5>
                 <p>24 November 2021</p>
               </div>
-              <div className="col-md-6 border">
-                {" "}
-                <p className="bg-light h4">Technology</p>
-                <p className="title">Facebook is changing its name to Meta</p>
+              <div className="col-md-6 border pt-2">
+                <a href="#" className="btn btn-outline-dark">
+                  <BsFillCircleFill color="blue" /> Technology
+                </a>
+                <h5 className="card-title pt-3">
+                  Facebook is changing its name to Meta
+                </h5>
                 <p>24 November 2021</p>
               </div>
-              <div className="col-md-6 border">
-                {" "}
-                <p className="bg-light h4">Technology</p>
-                <p className="title">Facebook is changing its name to Meta</p>
+              <div className="col-md-6 border pt-2">
+                <a href="#" className="btn btn-outline-dark">
+                  <BsFillCircleFill color="blue" /> Technology
+                </a>
+                <h5 className="card-title pt-3">
+                  Facebook is changing its name to Meta
+                </h5>
                 <p>24 November 2021</p>
               </div>
-              <div className="col-md-6 border">
-                {" "}
-                <p className="bg-light h4">Technology</p>
-                <p className="title">Facebook is changing its name to Meta</p>
+              <div className="col-md-6 border pt-2">
+                <a href="#" className="btn btn-outline-dark">
+                  <BsFillCircleFill color="blue" /> Technology
+                </a>
+                <h5 className="card-title pt-3">
+                  Facebook is changing its name to Meta
+                </h5>
                 <p>24 November 2021</p>
               </div>
             </div>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </div>
   </Layout>

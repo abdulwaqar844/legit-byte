@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import CareerImage from "./../images/career.png"
+import Laptop from "./../images/laptop.jpg"
 import Layout from "./../components/layout"
 import Seo from "./../components/seo"
 import Carousel from "react-bootstrap/Carousel"
@@ -8,8 +8,112 @@ import { BsFillCircleFill } from "react-icons/bs"
 const Blog = () => (
   <Layout>
     <Seo title="Blog | Legit Byte" />
-    <div className="container">
-      <div className="row">
+    <div className="container-fluid  me-0 ms-0">
+      <div className="container-fluid  ms-0 me-0">
+        <div className="row w-100 ms-0 me-0">
+          <div
+            id="carouselExampleCaptions"
+            className="carousel slide "
+            data-bs-ride="carousel"
+            data-bs-interval="false"
+          >
+            <ol className="carousel-indicators d-none d-md-flex">
+              <li
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+              >
+                <div className="d-flex flex-column">
+                  <p className="h4 ps-3 pt-2">2</p>
+                  <p className="pt-2 ps-3">
+                    Truth the Process And You Get will Win Today
+                  </p>
+                </div>
+              </li>
+              <li
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+              >
+                <div className="d-flex flex-column">
+                  <p className="h4 ps-3 pt-2">2</p>
+                  <p className="pt-2 ps-3">
+                    Truth the Process And You Get will Win Today
+                  </p>
+                </div>
+              </li>
+              <li
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+              >
+                <div className="d-flex flex-column">
+                  <p className="h4 ps-3 pt-2">3</p>
+                  <p className="pt-2 ps-3">
+                    Truth the Process And You Get will Win Today
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src={Laptop}
+                  className="d-block w-100 ovarlay carousel-inner-varlay "
+                  alt="..."
+                />
+                <div className="carousel-caption">
+                  <div className="d-flex flex-column">
+                    <div>
+                      <p className="btn btn-primary">Technoloy</p>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <h2>Truth the Process And You Get will Win Today</h2>
+                      <p>24 dec 2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={Laptop}
+                  className="d-block w-100 ovarlay carousel-inner-varlay"
+                  alt="..."
+                />
+                <div className="carousel-caption">
+                  <div className="d-flex flex-column">
+                    <div>
+                      <p className="btn btn-primary">Technoloy</p>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <h2>Truth the Process And You Get will Win Today</h2>
+                      <p>24 dec 2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={Laptop}
+                  className="d-block w-100 ovarlay carousel-inner-varlay"
+                  alt="..."
+                />
+                <div className="carousel-caption">
+                  <div className="d-flex flex-column">
+                    <div>
+                      <p className="btn btn-primary">Technoloy</p>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <h2>Truth the Process And You Get will Win Today</h2>
+                      <p>24 dec 2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row pt-4">
         <div className="col-md-3  ">
           <div className="card">
             <div className="card-body">
@@ -138,7 +242,7 @@ const Blog = () => (
       </div>
     </div>
     <div className="container-fluid p-0">
-      <Carousel className="bg-dark text-light " indicators="false">
+      <Carousel className="bg-dark text-light " indicators={false}>
         <Carousel.Item>
           <div className="d-flex flex-row  m-2">
             <div className="card-body pt-4">
@@ -159,7 +263,7 @@ const Blog = () => (
               />
             </div>
           </div>
-        </Carousel.Item>{" "}
+        </Carousel.Item>
         <Carousel.Item>
           <div className="d-flex flex-row  m-2">
             <div className="card-body pt-4">
@@ -180,7 +284,7 @@ const Blog = () => (
               />
             </div>
           </div>
-        </Carousel.Item>{" "}
+        </Carousel.Item>
         <Carousel.Item>
           <div className="d-flex flex-row  m-2">
             <div className="card-body pt-4">
@@ -204,7 +308,7 @@ const Blog = () => (
         </Carousel.Item>
       </Carousel>
     </div>
-    <div className="container pt-4">
+    <div className="container-fluid pt-4">
       <h1>Selected Posts</h1>
       <p>EDITOR'S PICKS</p>
       <div className="row">
@@ -245,7 +349,7 @@ const Blog = () => (
           />
 
           <div></div>
-        </div>{" "}
+        </div>
         <div className=" col-md-6 card pt-4">
           <div class=" d-flex flex-column justify-content-end mb-3 ">
             <div class=" d-flex justify-content-around pt-3">
@@ -268,7 +372,7 @@ const Blog = () => (
           />
 
           <div></div>
-        </div>{" "}
+        </div>
         <div className=" col-md-6 card pt-4">
           <div class=" d-flex flex-column justify-content-end mb-3 ">
             <div class=" d-flex justify-content-around pt-3">
@@ -294,7 +398,8 @@ const Blog = () => (
         </div>
       </div>
       <div className=" d-flex justify-content-center pt-4 pb-4">
-      <button className="btn btn-primary ">Load More</button></div>
+        <button className="btn btn-primary ">Load More</button>
+      </div>
     </div>
   </Layout>
 )

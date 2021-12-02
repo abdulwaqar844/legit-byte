@@ -13,9 +13,9 @@ const ExactNavLink = props => <Link getProps={isActive} {...props} />
 
 const Navbar = ({ siteTitle }) => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-secondary pt-4">
+    <nav className="navbar navbar-expand-md navbar-light bg-secondary pt-1">
       <div className="container-fluid align-items-center">
-        <Link to="/" className="navbar-brand mb-2" href="#">
+        <Link to="/" className="navbar-brand " href="#">
           <svg
             width="30"
             height="30"
@@ -68,7 +68,7 @@ const Navbar = ({ siteTitle }) => {
         </button>
 
         <div className="collapse navbar-collapse " id="main-navbar">
-          <ul className="navbar-nav ms-auto mb-2 mb-md-0 align-items-center">
+          <ul className="navbar-nav ms-auto  mb-md-0 align-items-center">
             <li className="nav-item">
               <ExactNavLink to="/services">SERVICES</ExactNavLink>
             </li>

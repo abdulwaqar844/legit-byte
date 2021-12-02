@@ -1,5 +1,5 @@
 import React from "react"
-import { FaFacebook,FaTwitter,FaLinkedinIn} from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 const footer = () => {
   return (
     <div className="container-fluid bg-primary text-light pt-3 pb-3">
@@ -15,16 +15,17 @@ const footer = () => {
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Follow US</h2>
           <div className="d-flex flex-row justify-content-start mt-4 pt-4 ms-0">
-          
-            <FaFacebook className='me-3'/>
-            <FaTwitter className='me-3'/>
-            <FaLinkedinIn className='me-3'/>
-
+            <FaFacebook className="me-3" />
+            <FaTwitter className="me-3" />
+            <FaLinkedinIn className="me-3" />
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Resource</h2>
-          <ul className="d-flex flex-column" style={{ listStyle: "none" ,marginRight:"0px"}}>
+          <ul
+            className="d-flex flex-column"
+            style={{ listStyle: "none", marginRight: "0px" }}
+          >
             <li>
               <a>Case Study</a>
             </li>
@@ -59,11 +60,13 @@ const footer = () => {
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Get in touch</h2>
-          <a href="mailto@info@loremipsum.com" className='text-light'>info@loremipsum.com</a>
+          <a href="mailto@info@loremipsum.com" className="text-light">
+            info@loremipsum.com
+          </a>
         </div>
       </div>
       <hr />
-      <h3 className='text-center'>© 2021 Legit Bytes</h3>
+      <h3 className="text-center">© 2021 Legit Bytes</h3>
     </div>
   )
 }
