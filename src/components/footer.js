@@ -14,17 +14,17 @@ const footer = () => {
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Follow US</h2>
-          <div className="d-flex flex-row justify-content-between">
+          <div className="d-flex flex-row justify-content-start mt-4 pt-4 ms-0">
           
-            <FaFacebook/>
-            <FaTwitter/>
-            <FaLinkedinIn/>
+            <FaFacebook className='me-3'/>
+            <FaTwitter className='me-3'/>
+            <FaLinkedinIn className='me-3'/>
 
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Resource</h2>
-          <ul className="d-flex flex-column" style={{ listStyle: "none" }}>
+          <ul className="d-flex flex-column" style={{ listStyle: "none" ,marginRight:"0px"}}>
             <li>
               <a>Case Study</a>
             </li>
