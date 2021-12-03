@@ -138,6 +138,11 @@ p.caption.feature-caption {
   right: 77% !important;
   top: 52% !important;
 }
+@media (min-width: 1400) {
+  .container {
+    width: 100vw;
+  }
+}
 
 .carousel-control-pre {
   right: 77% !important;

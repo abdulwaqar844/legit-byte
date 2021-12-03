@@ -5,7 +5,13 @@ import Layout from "./../components/layout"
 import Seo from "./../components/seo"
 import Carousel from "react-bootstrap/Carousel"
 import { BsFillCircleFill } from "react-icons/bs"
-const Blog = () => (
+import { graphql } from "gatsby"
+
+const Blog = ({
+  data: {
+    allWpPost: { nodes },
+  },
+}) => (
   <Layout>
     <Seo title="Blog | Legit Byte" />
     <div className="container-fluid  me-0 ms-0">
@@ -114,58 +120,23 @@ const Blog = () => (
         </div>
       </div>
       <div className="row pt-4">
-        <div className="col-md-3  ">
-          <div className="card">
-            <div className="card-body">
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill /> Technology
+        {nodes.slice(0, 4).map(post => {
+          return (
+            <div className="col-md-3  " key={post.slug}>
+              <a href={post.slug} className="card text-dark text-decoration-none">
+                <div className="card-body">
+                  <p  className="btn btn-outline-dark">
+                    <BsFillCircleFill /> {post.categories.nodes[0].name}
+                  </p>
+                  <h5 className="card-title pt-3">{post.title}</h5>
+                  <p className="card-text pt-2">
+                    {new Date(post.date).toDateString()}
+                  </p>
+                </div>
               </a>
-              <h5 className="card-title pt-3">
-                Facebook is changing its name to Meta
-              </h5>
-              <p className="card-text pt-2">24 November 2021</p>
             </div>
-          </div>
-        </div>
-        <div className="col-md-3  ">
-          <div className="card">
-            <div className="card-body">
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill color="blue" /> Technology
-              </a>
-              <h5 className="card-title pt-3">
-                Facebook is changing its name to Meta
-              </h5>
-              <p className="card-text pt-2">24 November 2021</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3  ">
-          <div className="card">
-            <div className="card-body">
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill color="grey" /> Technology
-              </a>
-              <h5 className="card-title pt-3">
-                Facebook is changing its name to Meta
-              </h5>
-              <p className="card-text pt-2">24 November 2021</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3  ">
-          <div className="card">
-            <div className="card-body">
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill color="red" /> Technology
-              </a>
-              <h5 className="card-title pt-3">
-                Facebook is changing its name to Meta
-              </h5>
-              <p className="card-text pt-2">24 November 2021</p>
-            </div>
-          </div>
-        </div>
+          )
+        })}
       </div>
       <div className="container pb-4">
         <div className="row  pt-4 mt-3">
@@ -174,74 +145,54 @@ const Blog = () => (
           </h2>
 
           <div className="col-md-6 border pt-2">
-            <div class="card bg-dark text-white ">
+            <div class="card  text-white ">
               <img
-                style={{ opacity: 0.6 }}
-                src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
+                style={{ opacity: 0.8 }}
+                src={`${nodes[0].featuredImage.node.srcSet} || ''`}
                 class="card-img"
                 alt="..."
                 width="auto"
-                height="380px"
+                height="425px"
               />
-              <div class="card-img-overlay d-flex flex-column justify-content-end">
-                <h5 class="card-title">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p class="card-text">24 November 2021</p>
+              <a class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none">
+                <h3 class="card-title">{nodes[0].title} </h3>
                 <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  {new Date(nodes[0].date).toDateString()}
                 </p>
-              </div>
+                <div
+                  className="p"
+                  dangerouslySetInnerHTML={{ __html: nodes[1].excerpt } || ""}
+                />
+              </a>
             </div>
           </div>
           <div className="col-md-6">
             <h3 className="text-center">Popular Post</h3>
 
-            <div className="row pt-4">
-              <div className="col-md-6 border pt-2 pb-1">
-                <a href="#" className="btn btn-outline-dark">
-                  <BsFillCircleFill color="blue" /> Technology
-                </a>
-                <h5 className="card-title pt-3">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p>24 November 2021</p>
-              </div>
-              <div className="col-md-6 border pt-2">
-                <a href="#" className="btn btn-outline-dark">
-                  <BsFillCircleFill color="blue" /> Technology
-                </a>
-                <h5 className="card-title pt-3">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p>24 November 2021</p>
-              </div>
-              <div className="col-md-6 border pt-2">
-                <a href="#" className="btn btn-outline-dark">
-                  <BsFillCircleFill color="blue" /> Technology
-                </a>
-                <h5 className="card-title pt-3">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p>24 November 2021</p>
-              </div>
-              <div className="col-md-6 border pt-2">
-                <a href="#" className="btn btn-outline-dark">
-                  <BsFillCircleFill color="blue" /> Technology
-                </a>
-                <h5 className="card-title pt-3">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p>24 November 2021</p>
-              </div>
+            <div className="row pt-2">
+              {nodes.slice(1).map(post => {
+                return (
+                  <div className="col-md-6 border pt-2 pb-1" key={post.slug}>
+                    <a
+                      href={post.slug}
+                      className="text-dark text-decoration-none"
+                    >
+                      <p className="btn btn-outline-dark">
+                        <BsFillCircleFill color="blue" />
+                        {post.categories.nodes[0].name.toUpperCase()}
+                      </p>
+                      <h5 className="card-title pt-3">{post.title}</h5>
+                      <p> {new Date(post.date).toDateString()}</p>
+                    </a>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0 d-none d-md-block">
       <Carousel className="bg-dark text-light " indicators={false}>
         <Carousel.Item>
           <div className="d-flex flex-row  m-2">
@@ -315,86 +266,84 @@ const Blog = () => (
         <div className=" col-md-7">
           <div class="card bg-info text-white ">
             <img
-              style={{ opacity: 0.6 }}
-              src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
+              style={{ opacity: 0.7 }}
+              src={nodes[0].featuredImage.node.srcSet}
               class="card-img"
               alt="..."
               width="auto"
               height="380px"
             />
-            <div class="card-img-overlay d-flex flex-column justify-content-end mb-3">
-              <h2 class="card-title">Facebook is changing its name to Meta</h2>
+            <div class="card-img-overlay d-flex flex-column justify-content-end ">
+              <h2 class="card-title">{nodes[0].title}</h2>
             </div>
           </div>
         </div>
         <div className=" col-md-5 card pt-1">
           <div class=" d-flex flex-column justify-content-end mb-3 ">
             <div class=" d-flex justify-content-around pt-1">
-              <p className="card-text pt-1">24 November 2021</p>
+              <p className="card-text pt-1">
+                {new Date(nodes[2].date).toDateString()}
+              </p>
               <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill /> Technology
+                <BsFillCircleFill /> {nodes[2].categories.nodes[0].name}
               </a>
             </div>
 
-            <h2 class="card-title pt-2">
-              Facebook is changing its name to Meta
-            </h2>
+            <h3 class="card-title pt-1">{nodes[2].title}</h3>
           </div>
           <img
-            src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
+            src={nodes[2].featuredImage.node.srcSet}
             class="card-img"
             alt="..."
             width="auto"
-            height="220px"
+            height="200px"
           />
-
-          <div></div>
         </div>
-        <div className=" col-md-6 card pt-4">
-          <div class=" d-flex flex-column justify-content-end mb-3 ">
-            <div class=" d-flex justify-content-around pt-3">
-              <p className="card-text pt-2">24 November 2021</p>
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill /> Technology
-              </a>
+        <a to={nodes[4].slug} className=" col-md-6  d-flex flex-row ">
+          <div className=" col d-flex flex-column justify-content-evenly ps-3">
+            <div>
+              <p href="#" className="btn btn-outline-dark">
+                <BsFillCircleFill /> {nodes[3].categories.nodes[0].name}
+              </p>
             </div>
-
-            <h2 class="card-title pt-2">
-              Facebook is changing its name to Meta
-            </h2>
+            <p className="card-text ">
+              {new Date(nodes[2].date).toDateString()}
+            </p>
+            <a href={nodes[2].slug}>
+              <h2 class="card-title">{nodes[3].title}</h2>
+            </a>
           </div>
-          <img
-            src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
-            class="card-img"
-            alt="..."
-            width="auto"
-            height="220px"
-          />
-
-          <div></div>
-        </div>
-        <div className=" col-md-6 card pt-4">
-          <div class=" d-flex flex-column justify-content-end mb-3 ">
-            <div class=" d-flex justify-content-around pt-3">
-              <p className="card-text pt-2">24 November 2021</p>
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill /> Technology
-              </a>
+          <div className=" col">
+            <img
+              src={nodes[4].featuredImage.node.srcSet}
+              class="card-img"
+              alt="..."
+              width="auto"
+              height="420px"
+            />
+          </div>
+        </a>
+        <div className=" col-md-6  d-flex flex-row ">
+          <div className=" col d-flex flex-column justify-content-evenly ps-3">
+            <div>
+              <p href="#" className="btn btn-outline-dark">
+                <BsFillCircleFill /> {nodes[4].categories.nodes[0].name}
+              </p>
             </div>
-
-            <h2 class="card-title pt-2">
-              Facebook is changing its name to Meta
-            </h2>
+            <p className="card-text ">
+              {new Date(nodes[2].date).toDateString()}
+            </p>
+            <h2 class="card-title">{nodes[4].title}</h2>
           </div>
-          <img
-            src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
-            class="card-img"
-            alt="..."
-            width="auto"
-            height="220px"
-          />
-
-          <div></div>
+          <div className=" col">
+            <img
+              src={nodes[4].featuredImage.node.srcSet}
+              class="card-img"
+              alt="..."
+              width="auto"
+              height="420px"
+            />
+          </div>
         </div>
       </div>
       <div className=" d-flex justify-content-center pt-4 pb-4">
@@ -403,5 +352,30 @@ const Blog = () => (
     </div>
   </Layout>
 )
-
+export const query = graphql`
+  {
+    allWpPost {
+      nodes {
+        title
+        slug
+        date
+        excerpt
+        categories {
+          nodes {
+            name
+            slug
+          }
+        }
+        content
+        featuredImage {
+          node {
+            srcSet
+            sourceUrl
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`
 export default Blog
