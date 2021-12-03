@@ -36,6 +36,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-gatsby-cloud`, {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        // the only required plugin option for WordPress is the GraphQL url.
+        url: `https://legitbytes.com/graphql`,
+      },
+    },
   ],
 }
