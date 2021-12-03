@@ -129,15 +129,16 @@ p.caption.feature-caption {
   border-radius: 10px;
 }
 .card-img-overlay {
-  top: auto !important;
+  top: 0px !important;
 }
 .card-img-overlay {
-  background-color: rgba(0, 0, 0, 0.541);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .carousel-control-next {
   right: 77% !important;
   top: 52% !important;
 }
+
 .carousel-control-pre {
   right: 77% !important;
   top: 52% !important;
@@ -196,13 +197,10 @@ p.caption.feature-caption {
 }
 .carousel-inner {
   height: 100% !important;
-
 }
 @media (max-width: 576px) {
   .carousel-inner-varlay {
-    
     height: 40vh !important;
-  
   }
 }
 
@@ -235,7 +233,6 @@ p.caption.feature-caption {
 }
 .carousel-item {
   padding-right: 0px;
-  padding-left: 0px; 
-   background-color: #14010188 !important;
-
+  padding-left: 0px;
+  background-color: #14010188 !important;
 }

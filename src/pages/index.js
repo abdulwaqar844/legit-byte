@@ -8,7 +8,13 @@ import Mobile from "./../images/mobile.svg"
 import Consult from "./../images/consult.svg"
 import Server from "./../images/server.svg"
 import { BsFillCircleFill } from "react-icons/bs"
-const IndexPage = () => (
+import { graphql } from "gatsby"
+
+const IndexPage = ({
+  data: {
+    allWpPost: { nodes },
+  },
+}) => (
   <Layout>
     <Seo title="Home" />
     <div className="container">
@@ -20,9 +26,9 @@ const IndexPage = () => (
               Effective Digital Solutions
             </h1>
             <p className="lead pt-3 pb-3">
-              Lorem ipsum dolor sit amet, consectetur{" "}
+              Lorem ipsum dolor sit amet, consectetur
               <span className="text-primary"> adipiscing elit</span> . Phasellus
-              quam lectus malesuada venenatis ut{" "}
+              quam lectus malesuada venenatis ut
               <span className="text-primary"> nulla</span> commodo. Nunc nulla.
             </p>
 
@@ -48,7 +54,7 @@ const IndexPage = () => (
       <div className="row pt-2 mt-2 ">
         <p className="h2 text-center pt-3">
           Awesome Services For <span className="text-primary">Customer</span>
-        </p>{" "}
+        </p>
       </div>
       <div className="row shadow   pt-4 pb-4 mt-2 mb-2">
         <div className="col-md-4">
@@ -68,7 +74,7 @@ const IndexPage = () => (
             </a>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className="row shadow  pt-4 pb-4 mt-2 mb-2">
         <div className="col-md-4">
           <img src={Server} alt="Mobile" height={260} />
@@ -86,7 +92,7 @@ const IndexPage = () => (
             </a>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className="row shadow  pt-4 pb-4 mt-2 mb-2">
         <div className="col-md-4">
           <img src={Consult} alt="Mobile" height={260} />
@@ -106,7 +112,6 @@ const IndexPage = () => (
         </div>
       </div>
       <div className="container-sm">
-        {" "}
         <div className="row  pt-4 mt-3">
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
             <h2>100%</h2>
@@ -115,11 +120,11 @@ const IndexPage = () => (
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
             <h2>2000+</h2>
             <p>Completed Project</p>
-          </div>{" "}
+          </div>
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
             <h2>10K</h2>
             <p>Global Customer</p>
-          </div>{" "}
+          </div>
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
             <h2>24/7</h2>
             <p>Always-on For Support</p>
@@ -133,33 +138,47 @@ const IndexPage = () => (
           </h2>
 
           <div className="col-md-6 border pt-2">
-            <div class="card bg-dark text-white ">
+            <div class="card  text-white ">
               <img
-                style={{ opacity: 0.6 }}
-                src="https://c.cricketpakistan.com.pk/images/posts/cover_16384446652.jpg"
+                style={{ opacity: 0.8 }}
+                src={nodes[0].featuredImage.node.srcSet}
                 class="card-img"
                 alt="..."
                 width="auto"
-                height="380px"
+                height="425px"
               />
-              <div class="card-img-overlay d-flex flex-column justify-content-end">
-                <h5 class="card-title">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p class="card-text">24 November 2021</p>
+              <a class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none" >
+                <h3 class="card-title">{nodes[0].title} </h3>
                 <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  {new Date(nodes[0].date).toDateString()}
                 </p>
-              </div>
+                <div
+                  className="p"
+                  dangerouslySetInnerHTML={{ __html: nodes[1].excerpt } || ""}
+                />
+              </a>
             </div>
           </div>
           <div className="col-md-6">
             <h3 className="text-center">Popular Post</h3>
 
-            <div className="row pt-4">
-              <div className="col-md-6 border pt-2 pb-1">
+            <div className="row pt-2">
+              {nodes.slice(1).map(post => {
+                return (
+                  <div className="col-md-6 border pt-2 pb-1" key={post.slug}>
+                    <a href={post.slug} className='text-dark text-decoration-none'>
+                      <p className="btn btn-outline-dark">
+                        <BsFillCircleFill color="blue" />
+                        {post.categories.nodes[0].name.toUpperCase()}
+                      </p>
+                      <h5 className="card-title pt-3">{post.title}</h5>
+                      <p> {new Date(post.date).toDateString()}</p>
+                    </a>{" "}
+                  </div>
+                )
+              })}
+
+              {/* <div className="col-md-6 border pt-2">
                 <a href="#" className="btn btn-outline-dark">
                   <BsFillCircleFill color="blue" /> Technology
                 </a>
@@ -185,16 +204,7 @@ const IndexPage = () => (
                   Facebook is changing its name to Meta
                 </h5>
                 <p>24 November 2021</p>
-              </div>
-              <div className="col-md-6 border pt-2">
-                <a href="#" className="btn btn-outline-dark">
-                  <BsFillCircleFill color="blue" /> Technology
-                </a>
-                <h5 className="card-title pt-3">
-                  Facebook is changing its name to Meta
-                </h5>
-                <p>24 November 2021</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -202,5 +212,30 @@ const IndexPage = () => (
     </div>
   </Layout>
 )
-
+export const query = graphql`
+  {
+    allWpPost {
+      nodes {
+        title
+        slug
+        date
+        excerpt
+        categories {
+          nodes {
+            slug
+            name
+          }
+        }
+        content
+        featuredImage {
+          node {
+            srcSet
+            sourceUrl
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`
 export default IndexPage
