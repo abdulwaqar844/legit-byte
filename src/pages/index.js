@@ -17,11 +17,11 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Seo title="Home" />
-    <div className="container">
-      <div className="row">
+    <div className="container-fluid">
+      <div className="row pe-0">
         <div className="col-md-6 col-sm-12">
           <div className="jumbotron ">
-            <h1 className="display-6 text-primary pt-3 pb-3">
+            <h1 className="display-6 text-primary pt-5 pb-2">
               Delivering Innovative <span className="text-dark"> and</span> Cost
               Effective Digital Solutions
             </h1>
@@ -42,75 +42,76 @@ const IndexPage = ({
         <div className=" col-md-6 col-sm-12">
           <div className="jumbotron align-items-end ">
             <img
-              width={670}
-              height={580}
-              className="heroimage "
+              className="heroimage img-fluid "
               src={HeroImage}
               alt="Legit byte"
             />
           </div>
         </div>
       </div>
-      <div className="row pt-2 mt-2 ">
-        <p className="h2 text-center pt-3">
-          Awesome Services For <span className="text-primary">Customer</span>
-        </p>
-      </div>
-      <div className="row shadow   pt-4 pb-4 mt-2 mb-2">
-        <div className="col-md-4">
-          <img src={Mobile} alt="Mobile" height={260} />
+      <div className="container-sm">
+        <div className="row pt-2 mt-2 mb-4">
+          <p className="h2 text-center pt-3">
+            Awesome Services For <span className="text-primary">Customer</span>
+          </p>
         </div>
-        <div className="col-md-8  d-flex ">
-          <div className="body  ">
-            <h5 className="title pt-4">Rapid MVP Development</h5>
-            <p className="text pt-4">
-              We can help you design and develop a high-quality Minimum Viable
-              Product to validate your business assumptions faster and more
-              efficiently. Our goal is creating successful products that your
-              users will love.
-            </p>
-            <a href="#" className="pt-3  text-primary">
-              Get Started
-            </a>
+        <div className="row shadow   p-4  mt-2 mb-4">
+          <div className="col-md-4">
+            <img src={Mobile} alt="Mobile" height={260} width={230} />
+          </div>
+          <div className="col-md-8  d-flex ">
+            <div className="body  ">
+              <h5 className="title pt-4">Rapid MVP Development</h5>
+              <p className="text pt-4">
+                We can help you design and develop a high-quality Minimum Viable
+                Product to validate your business assumptions faster and more
+                efficiently. Our goal is creating successful products that your
+                users will love.
+              </p>
+              <a href="#" className="pt-3  text-primary">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="row shadow  p-4  mt-2 mb-4">
+          <div className="col-md-4">
+            <img src={Server} alt="Mobile" height={260} />
+          </div>
+          <div className="col-md-8  d-flex ">
+            <div className="body  ">
+              <h5 className="title pt-4">Devops Implementation</h5>
+              <p className="text pt-4">
+                A transformational shift which incorporates secure culture,
+                practices, and tools to drive visibility, collaboration, and
+                agility of security into each phase of the DevOps pipeline
+              </p>
+              <a href="#" className="pt-3  text-primary">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="row shadow  p-4  mt-2 mb-4">
+          <div className="col-md-4">
+            <img src={Consult} alt="Mobile" height={260} />
+          </div>
+          <div className="col-md-8  d-flex ">
+            <div className="body  ">
+              <h5 className="title pt-4">Cloud Consulting</h5>
+              <p className="text pt-4">
+                With our team of certified cloud professional, unleash the full
+                potential of cloud and build more flexible, scalable and
+                available services.
+              </p>
+              <a href="#" className="pt-3  text-primary">
+                Get Started
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div className="row shadow  pt-4 pb-4 mt-2 mb-2">
-        <div className="col-md-4">
-          <img src={Server} alt="Mobile" height={260} />
-        </div>
-        <div className="col-md-8  d-flex ">
-          <div className="body  ">
-            <h5 className="title pt-4">Devops Implementation</h5>
-            <p className="text pt-4">
-              A transformational shift which incorporates secure culture,
-              practices, and tools to drive visibility, collaboration, and
-              agility of security into each phase of the DevOps pipeline
-            </p>
-            <a href="#" className="pt-3  text-primary">
-              Get Started
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="row shadow  pt-4 pb-4 mt-2 mb-2">
-        <div className="col-md-4">
-          <img src={Consult} alt="Mobile" height={260} />
-        </div>
-        <div className="col-md-8  d-flex ">
-          <div className="body  ">
-            <h5 className="title pt-4">Cloud Consulting</h5>
-            <p className="text pt-4">
-              With our team of certified cloud professional, unleash the full
-              potential of cloud and build more flexible, scalable and available
-              services.
-            </p>
-            <a href="#" className="pt-3  text-primary">
-              Get Started
-            </a>
-          </div>
-        </div>
-      </div>
+
       <div className="container-sm">
         <div className="row  pt-4 mt-3">
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
@@ -137,24 +138,29 @@ const IndexPage = ({
             Latest News From <span className="text-primary">Blog</span>
           </h2>
 
-          <div className="col-md-6 border pt-2">
-            <div class="card  text-white ">
+          <div className="col-md-6 ">
+            <div className="card  text-white ">
               <img
-                style={{ opacity: 0.8 }}
                 src={nodes[0].featuredImage.node.srcSet}
-                class="card-img"
+                className="card-img"
                 alt="..."
                 width="auto"
-                height="425px"
+                height="480px"
               />
-              <a class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none" >
-                <h3 class="card-title">{nodes[0].title} </h3>
-                <p class="card-text">
+              <a
+                href={nodes[0].slug}
+                className=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none"
+              >
+                <p className="h4">{nodes[0].title} </p>
+                <p className="card-text">
                   {new Date(nodes[0].date).toDateString()}
                 </p>
                 <div
                   className="p"
-                  dangerouslySetInnerHTML={{ __html: nodes[1].excerpt } || ""}
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      nodes[1].excerpt.split(" ").splice(0, 25).join(" ") || "",
+                  }}
                 />
               </a>
             </div>
@@ -166,7 +172,10 @@ const IndexPage = ({
               {nodes.slice(1).map(post => {
                 return (
                   <div className="col-md-6 border pt-2 pb-1" key={post.slug}>
-                    <a href={post.slug} className='text-dark text-decoration-none'>
+                    <a
+                      href={post.slug}
+                      className="text-dark text-decoration-none"
+                    >
                       <p className="btn btn-outline-dark">
                         <BsFillCircleFill color="blue" />
                         {post.categories.nodes[0].name.toUpperCase()}

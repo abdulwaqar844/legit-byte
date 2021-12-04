@@ -24,14 +24,32 @@ const Blog = ({
             data-bs-interval="false"
           >
             <ol className="carousel-indicators d-none d-md-flex">
-              <li
+              {nodes.slice(0, 3).map((post, index) => {
+                return (
+                 
+                    <li
+                      data-bs-target="#carouselExampleCaptions"
+                      data-bs-slide-to={index}
+                      className={index == 0 ? "active" : ""}
+                      aria-current={index == 0 ? true : ""}
+                    >
+                      <div className="d-flex flex-column">
+                        <p className="h4 ps-3 pt-2">{index+1}</p>
+                        <p className="pt-2 ps-3">{post.title} </p>
+                      </div>
+                    </li>
+                 
+                )
+              })}
+
+              {/* <li
                 data-bs-target="#carouselExampleCaptions"
                 data-bs-slide-to="0"
                 className="active"
                 aria-current="true"
               >
                 <div className="d-flex flex-column">
-                  <p className="h4 ps-3 pt-2">2</p>
+                  <p className="h4 ps-3 pt-2">1</p>
                   <p className="pt-2 ps-3">
                     Truth the Process And You Get will Win Today
                   </p>
@@ -58,10 +76,37 @@ const Blog = ({
                     Truth the Process And You Get will Win Today
                   </p>
                 </div>
-              </li>
+              </li> */}
             </ol>
             <div className="carousel-inner">
-              <div className="carousel-item active">
+              {nodes.slice(0, 3).map((post, index) => {
+                return (
+                  <div
+                    className={`carousel-item ${index == 0 ? "active" : ""}`}
+                  >
+                    <img
+                      src={post.featuredImage.node.srcSet}
+                      className="d-block w-100  ovarlay carousel-inner-varlay"
+                      alt="..."
+                      height="520px"
+                    />
+                    <div className="carousel-caption">
+                      <div className="d-flex flex-column">
+                        <div>
+                          <p className="btn btn-primary">
+                            {post.categories.nodes[0].name}
+                          </p>
+                        </div>
+                        <div className="d-flex flex-column">
+                          <h2>{post.title}</h2>
+                          <p> {new Date(post.date).toDateString()}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+              {/* <div className="carousel-item active">
                 <img
                   src={Laptop}
                   className="d-block w-100 ovarlay carousel-inner-varlay "
@@ -96,25 +141,7 @@ const Blog = ({
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  src={Laptop}
-                  className="d-block w-100 ovarlay carousel-inner-varlay"
-                  alt="..."
-                />
-                <div className="carousel-caption">
-                  <div className="d-flex flex-column">
-                    <div>
-                      <p className="btn btn-primary">Technoloy</p>
-                    </div>
-                    <div className="d-flex flex-column">
-                      <h2>Truth the Process And You Get will Win Today</h2>
-                      <p>24 dec 2021</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -123,9 +150,12 @@ const Blog = ({
         {nodes.slice(0, 4).map(post => {
           return (
             <div className="col-md-3  " key={post.slug}>
-              <a href={post.slug} className="card text-dark text-decoration-none">
+              <a
+                href={post.slug}
+                className="card text-dark text-decoration-none"
+              >
                 <div className="card-body">
-                  <p  className="btn btn-outline-dark">
+                  <p className="btn btn-outline-dark">
                     <BsFillCircleFill /> {post.categories.nodes[0].name}
                   </p>
                   <h5 className="card-title pt-3">{post.title}</h5>
@@ -144,17 +174,19 @@ const Blog = ({
             Latest News From <span className="text-primary">Blog</span>
           </h2>
 
-          <div className="col-md-6 border pt-2">
+          <div className="col-md-6">
             <div class="card  text-white ">
               <img
-                style={{ opacity: 0.8 }}
                 src={`${nodes[0].featuredImage.node.srcSet} || ''`}
                 class="card-img"
                 alt="..."
                 width="auto"
-                height="425px"
+                height="480px"
               />
-              <a class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none">
+              <a
+                href={`/${nodes[0].slug}`}
+                class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none"
+              >
                 <h3 class="card-title">{nodes[0].title} </h3>
                 <p class="card-text">
                   {new Date(nodes[0].date).toDateString()}
@@ -266,7 +298,7 @@ const Blog = ({
         <div className=" col-md-7">
           <div class="card bg-info text-white ">
             <img
-              style={{ opacity: 0.7 }}
+              style={{ opacity: 0.9 }}
               src={nodes[0].featuredImage.node.srcSet}
               class="card-img"
               alt="..."
@@ -279,27 +311,27 @@ const Blog = ({
           </div>
         </div>
         <div className=" col-md-5 card pt-1">
-          <div class=" d-flex flex-column justify-content-end mb-3 ">
-            <div class=" d-flex justify-content-around pt-1">
+          <a href={nodes[1].slug} class=" d-flex flex-column justify-content-end mb-3 text-decoration-none text-body">
+            <div  class=" d-flex justify-content-around pt-1 ">
               <p className="card-text pt-1">
-                {new Date(nodes[2].date).toDateString()}
+                {new Date(nodes[1].date).toDateString()}
               </p>
-              <a href="#" className="btn btn-outline-dark">
-                <BsFillCircleFill /> {nodes[2].categories.nodes[0].name}
-              </a>
+              <p  className="btn btn-outline-dark">
+                <BsFillCircleFill /> {nodes[1].categories.nodes[0].name}
+              </p>
             </div>
 
-            <h3 class="card-title pt-1">{nodes[2].title}</h3>
-          </div>
+            <h3 class="card-title pt-1">{nodes[1].title}</h3>
+          </a>
           <img
-            src={nodes[2].featuredImage.node.srcSet}
-            class="card-img"
+            src={nodes[1].featuredImage.node.srcSet}
+            className="card-img"
             alt="..."
             width="auto"
             height="200px"
           />
         </div>
-        <a to={nodes[4].slug} className=" col-md-6  d-flex flex-row ">
+        <a to={nodes[3].slug} className=" col-md-6  d-flex flex-row text-decoration-none text-body">
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
               <p href="#" className="btn btn-outline-dark">
@@ -307,11 +339,11 @@ const Blog = ({
               </p>
             </div>
             <p className="card-text ">
-              {new Date(nodes[2].date).toDateString()}
+              {new Date(nodes[3].date).toDateString()}
             </p>
-            <a href={nodes[2].slug}>
+           
               <h2 class="card-title">{nodes[3].title}</h2>
-            </a>
+           
           </div>
           <div className=" col">
             <img
@@ -323,7 +355,7 @@ const Blog = ({
             />
           </div>
         </a>
-        <div className=" col-md-6  d-flex flex-row ">
+        <a href={nodes[4].slug} className=" col-md-6  d-flex flex-row text-decoration-none text-body ">
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
               <p href="#" className="btn btn-outline-dark">
@@ -344,7 +376,7 @@ const Blog = ({
               height="420px"
             />
           </div>
-        </div>
+        </a>
       </div>
       <div className=" d-flex justify-content-center pt-4 pb-4">
         <button className="btn btn-primary ">Load More</button>

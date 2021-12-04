@@ -22,7 +22,7 @@ const post = ({ data }) => {
           />
           <div className="caption caption mb-0 mt-2 feature-caption  d-flex flex-column justify-content-center text-light lb-overlay">
             <div className="border-2 border-dark d-flex flex-row w-10 ">
-              <p className="btn btn-ouline-light">
+              <p className="btn btn-light">
                 {" "}
                 <BsFillCircleFill color="yellow" />{" "}
                 {wpPost.categories.nodes[0].name}
@@ -81,8 +81,8 @@ const post = ({ data }) => {
                   {/* <p style={{ fontSize: "12px" }}>
                   {allWpPost.nodes[0].excerpt|| ''}
                   </p> */}
-                  <div
-                    className="d-none d-md-block"
+                  {/* <div
+                    className="d-none d-md-none d-lg-block"
                     dangerouslySetInnerHTML={{
                       __html:
                         allWpPost.nodes[0].excerpt
@@ -90,7 +90,7 @@ const post = ({ data }) => {
                           .splice(0, 20)
                           .join(" ") || "",
                     }}
-                  />
+                  /> */}
                 </a>
               </div>
             </div>
@@ -110,10 +110,10 @@ const post = ({ data }) => {
                   className=""
                 />
                 <a   href={`/${allWpPost.nodes[1].slug}`} className=" text-decoration-none caption caption mb-0  feature-caption  d-flex flex-column text-light justify-content-center card-img-overlay">
-                  <h3> {allWpPost.nodes[1].title} </h3>
+                  <h4> {allWpPost.nodes[1].title} </h4>
                   <p>{new Date(allWpPost.nodes[1].date).toDateString()}</p>
-                  <div
-                    className="d-none d-md-block"
+                  {/* <div
+                    className="d-none d-md-none d-lg-block"
                     dangerouslySetInnerHTML={{
                       __html:
                         allWpPost.nodes[1].excerpt
@@ -121,7 +121,7 @@ const post = ({ data }) => {
                           .splice(0, 20)
                           .join(" ") || "",
                     }}
-                  />
+                  /> */}
                 </a>
               </div>
             </div>
@@ -138,10 +138,10 @@ const post = ({ data }) => {
                   className=""
                 />
                 <a  href={`/${allWpPost.nodes[2].slug}`} className=" text-decoration-none caption caption mb-0  feature-caption  d-flex flex-column text-light justify-content-center card-img-overlay">
-                  <h3> {allWpPost.nodes[2].title} </h3>
+                  <h4 className='pt-4'> {allWpPost.nodes[2].title} </h4>
                   <p>{new Date(allWpPost.nodes[2].date).toDateString()}</p>
-                  <div
-                    className="d-none d-md-block"
+                  {/* <div
+                    className="d-none d-md-none d-lg-block"
                     dangerouslySetInnerHTML={{
                       __html:
                         allWpPost.nodes[2].excerpt
@@ -150,7 +150,7 @@ const post = ({ data }) => {
                           .join(" ") || "",
                     }}
                   />
-                </a>
+                */}</a> 
               </div>
             </div>
           </div>

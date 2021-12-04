@@ -13,12 +13,12 @@ const ExactNavLink = props => <Link getProps={isActive} {...props} />
 
 const Navbar = ({ siteTitle }) => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-secondary pt-1">
-      <div className="container-fluid align-items-center">
+    <nav className="navbar navbar-expand-md navbar-light bg-none navbar-expand-md navbar-fixed-top">
+      <div className="container-fluid align-items-center"> 
         <Link to="/" className="navbar-brand " href="#">
           <svg
-            width="30"
-            height="30"
+            width="50"
+            height="50"
             viewBox="0 0 52 53"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +82,8 @@ const Navbar = ({ siteTitle }) => {
               <ExactNavLink to="/blog">BLOG</ExactNavLink>
             </li>{" "}
             <li className="nav-item ">
-              <ExactNavLink className="p-0 " to="/get-start">
-                <p className="btn btn-outline-primary "> LET’S TALK</p>
+              <ExactNavLink  to="/get-start">
+                <p className="btn btn-outline-primary bg-secondary m-0 "> LET’S TALK</p>
               </ExactNavLink>
             </li>
           </ul>

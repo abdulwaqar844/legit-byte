@@ -14,16 +14,22 @@ const footer = () => {
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Follow US</h2>
-          <div className="d-flex flex-row justify-content-start mt-4 pt-4 ms-0">
-            <FaFacebook className="me-3" />
-            <FaTwitter className="me-3" />
-            <FaLinkedinIn className="me-3" />
+          <div className="d-flex flex-row justify-content-start  pt-2 ms-0">
+            <a href="facebook.com" className="text-light">
+              <FaFacebook className="me-3" />
+            </a>
+            <a href="twitter.com " className="text-light">
+              <FaTwitter className="me-3" />
+            </a>
+            <a href="linkedin.com" className="text-light">
+              <FaLinkedinIn className="me-3" />
+            </a>
           </div>
         </div>
         <div className="col-md-3 d-flex flex-column  justify-content-start">
           <h2>Resource</h2>
           <ul
-            className="d-flex flex-column"
+            className="d-flex flex-column ps-0"
             style={{ listStyle: "none", marginRight: "0px" }}
           >
             <li>
@@ -45,13 +51,13 @@ const footer = () => {
               <a>About</a>
             </li>
             <li>
-              <a>Request a Quote</a>
+              <a>Request a Qoute</a>
             </li>
             <li>
-              <a>Careers</a>
+              <a href="/careers">Careers</a>
             </li>
             <li>
-              <a>Private Policy</a>
+              <a>Privacy Policy</a>
             </li>
             <li>
               <a>Terms of Conditions</a>
