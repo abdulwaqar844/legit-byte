@@ -24,7 +24,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `
   )
-  console.log(result)
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
@@ -41,7 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // In your blog post template's graphql query, you can use pagePath
       // as a GraphQL variable to query for data from the markdown file.
       context: {
-        pagePath: path,
+        slug: path,
       },
     })
   })
