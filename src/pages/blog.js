@@ -34,7 +34,7 @@ const Blog = ({
                   >
                     <div className="d-flex flex-column">
                       <p className="h4 ps-3 pt-2">{index + 1}</p>
-                      <p className="pt-2 ps-3">{post.title} </p>
+                      <p className="pt-2 ps-3" style={{fontSize:"12px"}}>{post.title} </p>
                     </div>
                   </li>
                 )
@@ -319,13 +319,13 @@ const Blog = ({
     <div className="container bg-dark pt-3 mb-3">
     
    
-      <div className=" d-flex flex-row pe-5 me-5 align-items-center  justify-content-between">
+      <div className=" d-flex flex-column flex-md-row pe-md-5 me-md-5 align-items-center  justify-content-between">
       <div className="pe-3 ">
-        <img src={Logo} alt="logo"  />
+        <img src={Logo} alt="logo" width='100px' />
       </div>
-        <div className="text-secondary d-flex flex-column justify-content-center">
+        <div className="text-secondary d-flex flex-column justify-content-center ps-3">
           <h1>Subscribe for Newstes Articel</h1>
-          <div className="d-flex flex-row justify-content-center pt-4">
+          <div className="d-flex flex-column flex-md-row justify-content-center pt-4">
             <input
               type="email"
               placeholder="Please enter Your email"
