@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { BsFillCircleFill } from "react-icons/bs"
+import Logo from "../images/Logo (1).svg"
 
 const post = ({ data }) => {
   const { allWpPost, wpPost } = data
@@ -182,7 +183,29 @@ const post = ({ data }) => {
           })}
         </div>
       </div>
- 
+      <div className="container bg-dark pt-3 mb-3">
+    
+   
+    <div className=" d-flex flex-row pe-5 me-5 align-items-center  justify-content-between">
+    <div className="pe-3 ">
+      <img src={Logo} alt="logo"  />
+    </div>
+      <div className="text-secondary d-flex flex-column justify-content-center">
+        <h1>Subscribe for Newstes Articel</h1>
+        <div className="d-flex flex-row justify-content-center pt-4">
+          <input
+            type="email"
+            placeholder="Please enter Your email"
+            className="ps-1 pt-2 pb-2 pe-1 m-1"
+          />
+          <button className="btn btn-primary pt-2 pb-2 m-1">Subscribe</button>
+        </div>
+        <p className="text-center pt-4">
+          Get free articles, ebooks and videos latest
+        </p>
+      </div>
+    </div>
+  </div>
     </Layout>
   )
 }

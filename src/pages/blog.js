@@ -6,7 +6,7 @@ import Seo from "./../components/seo"
 import Carousel from "react-bootstrap/Carousel"
 import { BsFillCircleFill } from "react-icons/bs"
 import { graphql } from "gatsby"
-
+import Logo from "../images/Logo (1).svg"
 const Blog = ({
   data: {
     allWpPost: { nodes },
@@ -26,57 +26,19 @@ const Blog = ({
             <ol className="carousel-indicators d-none d-md-flex">
               {nodes.slice(0, 3).map((post, index) => {
                 return (
-                 
-                    <li
-                      data-bs-target="#carouselExampleCaptions"
-                      data-bs-slide-to={index}
-                      className={index == 0 ? "active" : ""}
-                      aria-current={index == 0 ? true : ""}
-                    >
-                      <div className="d-flex flex-column">
-                        <p className="h4 ps-3 pt-2">{index+1}</p>
-                        <p className="pt-2 ps-3">{post.title} </p>
-                      </div>
-                    </li>
-                 
+                  <li
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to={index}
+                    className={index == 0 ? "active" : ""}
+                    aria-current={index == 0 ? true : ""}
+                  >
+                    <div className="d-flex flex-column">
+                      <p className="h4 ps-3 pt-2">{index + 1}</p>
+                      <p className="pt-2 ps-3">{post.title} </p>
+                    </div>
+                  </li>
                 )
               })}
-
-              {/* <li
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="0"
-                className="active"
-                aria-current="true"
-              >
-                <div className="d-flex flex-column">
-                  <p className="h4 ps-3 pt-2">1</p>
-                  <p className="pt-2 ps-3">
-                    Truth the Process And You Get will Win Today
-                  </p>
-                </div>
-              </li>
-              <li
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="1"
-              >
-                <div className="d-flex flex-column">
-                  <p className="h4 ps-3 pt-2">2</p>
-                  <p className="pt-2 ps-3">
-                    Truth the Process And You Get will Win Today
-                  </p>
-                </div>
-              </li>
-              <li
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="2"
-              >
-                <div className="d-flex flex-column">
-                  <p className="h4 ps-3 pt-2">3</p>
-                  <p className="pt-2 ps-3">
-                    Truth the Process And You Get will Win Today
-                  </p>
-                </div>
-              </li> */}
             </ol>
             <div className="carousel-inner">
               {nodes.slice(0, 3).map((post, index) => {
@@ -106,42 +68,6 @@ const Blog = ({
                   </div>
                 )
               })}
-              {/* <div className="carousel-item active">
-                <img
-                  src={Laptop}
-                  className="d-block w-100 ovarlay carousel-inner-varlay "
-                  alt="..."
-                />
-                <div className="carousel-caption">
-                  <div className="d-flex flex-column">
-                    <div>
-                      <p className="btn btn-primary">Technoloy</p>
-                    </div>
-                    <div className="d-flex flex-column">
-                      <h2>Truth the Process And You Get will Win Today</h2>
-                      <p>24 dec 2021</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  src={Laptop}
-                  className="d-block w-100 ovarlay carousel-inner-varlay"
-                  alt="..."
-                />
-                <div className="carousel-caption">
-                  <div className="d-flex flex-column">
-                    <div>
-                      <p className="btn btn-primary">Technoloy</p>
-                    </div>
-                    <div className="d-flex flex-column">
-                      <h2>Truth the Process And You Get will Win Today</h2>
-                      <p>24 dec 2021</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
@@ -291,7 +217,7 @@ const Blog = ({
         </Carousel.Item>
       </Carousel>
     </div>
-    <div className="container-fluid pt-4">
+    <div className="container pt-4">
       <h1>Selected Posts</h1>
       <p>EDITOR'S PICKS</p>
       <div className="row">
@@ -311,12 +237,15 @@ const Blog = ({
           </div>
         </div>
         <div className=" col-md-5 card pt-1">
-          <a href={nodes[1].slug} class=" d-flex flex-column justify-content-end mb-3 text-decoration-none text-body">
-            <div  class=" d-flex justify-content-around pt-1 ">
+          <a
+            href={nodes[1].slug}
+            class=" d-flex flex-column justify-content-end mb-3 text-decoration-none text-body"
+          >
+            <div class=" d-flex justify-content-around pt-1 ">
               <p className="card-text pt-1">
                 {new Date(nodes[1].date).toDateString()}
               </p>
-              <p  className="btn btn-outline-dark">
+              <p className="btn btn-outline-dark">
                 <BsFillCircleFill /> {nodes[1].categories.nodes[0].name}
               </p>
             </div>
@@ -331,7 +260,10 @@ const Blog = ({
             height="200px"
           />
         </div>
-        <a to={nodes[3].slug} className=" col-md-6  d-flex flex-row text-decoration-none text-body">
+        <a
+          to={nodes[3].slug}
+          className=" col-md-6  d-flex flex-row text-decoration-none text-body"
+        >
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
               <p href="#" className="btn btn-outline-dark">
@@ -341,9 +273,8 @@ const Blog = ({
             <p className="card-text ">
               {new Date(nodes[3].date).toDateString()}
             </p>
-           
-              <h2 class="card-title">{nodes[3].title}</h2>
-           
+
+            <h2 class="card-title">{nodes[3].title}</h2>
           </div>
           <div className=" col">
             <img
@@ -355,7 +286,10 @@ const Blog = ({
             />
           </div>
         </a>
-        <a href={nodes[4].slug} className=" col-md-6  d-flex flex-row text-decoration-none text-body ">
+        <a
+          href={nodes[4].slug}
+          className=" col-md-6  d-flex flex-row text-decoration-none text-body "
+        >
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
               <p href="#" className="btn btn-outline-dark">
@@ -380,6 +314,29 @@ const Blog = ({
       </div>
       <div className=" d-flex justify-content-center pt-4 pb-4">
         <button className="btn btn-primary ">Load More</button>
+      </div>
+    </div>
+    <div className="container bg-dark pt-3 mb-3">
+    
+   
+      <div className=" d-flex flex-row pe-5 me-5 align-items-center  justify-content-between">
+      <div className="pe-3 ">
+        <img src={Logo} alt="logo"  />
+      </div>
+        <div className="text-secondary d-flex flex-column justify-content-center">
+          <h1>Subscribe for Newstes Articel</h1>
+          <div className="d-flex flex-row justify-content-center pt-4">
+            <input
+              type="email"
+              placeholder="Please enter Your email"
+              className="ps-1 pt-2 pb-2 pe-1 m-1"
+            />
+            <button className="btn btn-primary pt-2 pb-2 m-1">Subscribe</button>
+          </div>
+          <p className="text-center pt-4">
+            Get free articles, ebooks and videos latest
+          </p>
+        </div>
       </div>
     </div>
   </Layout>

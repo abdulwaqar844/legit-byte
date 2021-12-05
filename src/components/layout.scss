@@ -1,10 +1,13 @@
 //Here you can customize bootstrap
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+*{
+  font-family: 'Open Sans' , sans-serif ;
+}
 $primary: #d40000;
 $secondary: #fff;
 $dark: #13181c;
 
-
+// font-family: 'Open Sans', sans-serif;
 .btn {
   border: 1px solid #d40000;
 }
