@@ -22,7 +22,7 @@ const post = ({ data }) => {
             style={{ opacity: 0.7 }}
           />
           <div className="caption caption mb-0 mt-2 feature-caption  d-flex flex-column justify-content-center text-light lb-overlay">
-            <div className="border-2 border-dark d-flex flex-row w-10 ">
+            <div className="border-2 border-dark d-flex flex-row  ">
               <p className="btn btn-light">
                 {" "}
                 <BsFillCircleFill color="yellow" />{" "}
@@ -38,8 +38,8 @@ const post = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="row w-100 pt-2">
-        <div className="col-md-8 col-12">
+      <div className="row container-fluid pt-2 m-0 ">
+        <div className="col-md-8 col-12 md-pe-5">
           <div className="row md-ms-3 ps-1 md-ps-2 pt-4">
             <div className='ps-4 pe-4'>
               <p>{new Date(wpPost.date).toDateString()}</p>
@@ -196,7 +196,7 @@ const post = ({ data }) => {
           <input
             type="email"
             placeholder="Please enter Your email"
-            className="ps-1 pt-2 pb-2 pe-1 m-1"
+            className="ps-1 pt-2 pb-2 pe-1 m-1" style={{borderRadius:'6px'}}
           />
           <button className="btn btn-primary pt-2 pb-2 m-1">Subscribe</button>
         </div>
