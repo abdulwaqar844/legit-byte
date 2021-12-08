@@ -70,10 +70,10 @@ const Navbar = ({ siteTitle }) => {
         <div className="collapse navbar-collapse " id="main-navbar">
           <ul className="navbar-nav ms-auto  mb-md-0 align-items-center">
             <li className="nav-item">
-              <ExactNavLink to="/services">SERVICES</ExactNavLink>
+              <ExactNavLink to="/#services">SERVICES</ExactNavLink>
             </li>
             <li className="nav-item">
-              <ExactNavLink to="#caseStudies">CASE STUDIES</ExactNavLink>
+              <ExactNavLink to="/#caseStudies">CASE STUDIES</ExactNavLink>
             </li>{" "}
             <li className="nav-item">
               <ExactNavLink to="/careers">CAREERS</ExactNavLink>
@@ -82,7 +82,7 @@ const Navbar = ({ siteTitle }) => {
               <ExactNavLink to="/blog">BLOG</ExactNavLink>
             </li>{" "}
             <li className="nav-item ">
-              <ExactNavLink  to="#getStarded">
+              <ExactNavLink  to="/#getStarded">
                 <p className="btn btn-outline-primary bg-secondary m-0 "> LET’S TALK</p>
               </ExactNavLink>
             </li>

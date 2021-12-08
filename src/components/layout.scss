@@ -27,6 +27,10 @@ $dark: #13181c;
   
 
 }
+.row {
+  --bs-gutter-x: 0 !important;
+
+}
 p.caption.feature-caption {
   font-weight: 600 !important;
   letter-spacing: 0.1px !important;
@@ -240,6 +244,7 @@ p.caption.feature-caption {
   width: 185px !important;
   height: 175px !important;
 }
+
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
   flex: 0 1 auto;
@@ -252,7 +257,6 @@ p.caption.feature-caption {
   display: flex; /* this is for indicators  */
 }
 .carousel-indicators {
-  right: -10rem !important;
   left: 3rem !important;
   align-items: flex-end !important;
 }

@@ -14,65 +14,64 @@ const Blog = ({
 }) => (
   <Layout>
     <Seo title="Blog | Legit Byte" />
-    <div className="container-fluid  me-0 ms-0">
-      <div className="container-fluid  ms-0 me-0">
-        <div className="row w-100 ms-0 me-0">
-          <div
-            id="carouselExampleCaptions"
-            className="carousel slide "
-            data-bs-ride="carousel"
-            data-bs-interval="false"
-          >
-            <ol className="carousel-indicators d-none d-md-flex">
-              {nodes.slice(0, 3).map((post, index) => {
-                return (
-                  <li
-                    data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide-to={index}
-                    className={index == 0 ? "active" : ""}
-                    aria-current={index == 0 ? true : ""}
-                  >
+    <div className="container-fluid   p-0 ">
+      <div className="row container-fluid ps-0 pe-0">
+        <div
+          id="carouselExampleCaptions"
+          className="carousel slide "
+          data-bs-ride="carousel"
+          data-bs-interval="false"
+        >
+          <ol className="carousel-indicators d-none d-md-flex pe-2">
+            {nodes.slice(0, 3).map((post, index) => {
+              return (
+                <li
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to={index}
+                  className={index == 0 ? "active" : ""}
+                  aria-current={index == 0 ? true : ""}
+                >
+                  <div className="d-flex flex-column">
+                    <p className="h4 ps-3 pt-2">{index + 1}</p>
+                    <p className="pt-2 ps-3" style={{ fontSize: "12px" }}>
+                      {post.title}{" "}
+                    </p>
+                  </div>
+                </li>
+              )
+            })}
+          </ol>
+          <div className="carousel-inner">
+            {nodes.slice(0, 3).map((post, index) => {
+              return (
+                <div className={`carousel-item ${index == 0 ? "active" : ""}`}>
+                  <img
+                    src={post.featuredImage.node.srcSet}
+                    className="d-block   ovarlay carousel-inner-varlay"
+                    alt="..."
+                    height="520px"
+                    width="100%"
+                  />
+                  <div className="carousel-caption">
                     <div className="d-flex flex-column">
-                      <p className="h4 ps-3 pt-2">{index + 1}</p>
-                      <p className="pt-2 ps-3" style={{fontSize:"12px"}}>{post.title} </p>
-                    </div>
-                  </li>
-                )
-              })}
-            </ol>
-            <div className="carousel-inner">
-              {nodes.slice(0, 3).map((post, index) => {
-                return (
-                  <div
-                    className={`carousel-item ${index == 0 ? "active" : ""}`}
-                  >
-                    <img
-                      src={post.featuredImage.node.srcSet}
-                      className="d-block w-100  ovarlay carousel-inner-varlay"
-                      alt="..."
-                      height="520px"
-                    />
-                    <div className="carousel-caption">
-                      <div className="d-flex flex-column">
-                        <div>
-                          <p className="btn btn-primary">
-                            {post.categories.nodes[0].name}
-                          </p>
-                        </div>
-                        <div className="d-flex flex-column">
-                          <h2>{post.title}</h2>
-                          <p> {new Date(post.date).toDateString()}</p>
-                        </div>
+                      <div>
+                        <p className="btn btn-primary">
+                          {post.categories.nodes[0].name}
+                        </p>
+                      </div>
+                      <div className="d-flex flex-column col-6">
+                        <h2 classsName="h4 md-h2">{post.title}</h2>
+                        <p> {new Date(post.date).toDateString()}</p>
                       </div>
                     </div>
                   </div>
-                )
-              })}
-            </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
-      <div className="row pt-4">
+      <div className="row container-fluid pt-4">
         {nodes.slice(0, 4).map(post => {
           return (
             <div className="col-md-3  " key={post.slug}>
@@ -317,12 +316,10 @@ const Blog = ({
       </div>
     </div>
     <div className="container bg-dark pt-3 mb-3">
-    
-   
       <div className=" d-flex flex-column flex-md-row pe-md-5 me-md-5 align-items-center  justify-content-between">
-      <div className="pe-3 ">
-        <img src={Logo} alt="logo" width='100px' />
-      </div>
+        <div className="pe-3 ">
+          <img src={Logo} alt="logo" width="100px" />
+        </div>
         <div className="text-secondary d-flex flex-column justify-content-center ps-3">
           <h1>Subscribe for Newstes Articel</h1>
           <div className="d-flex flex-column flex-md-row justify-content-center pt-4">

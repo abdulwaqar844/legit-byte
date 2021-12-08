@@ -1,6 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import HeroImage from "./../images/hero.svg"
@@ -49,13 +47,13 @@ const IndexPage = ({
           </div>
         </div>
       </div>
-      <div className="container-sm" id="getStarded">
+      <div className="container-sm" id="services">
         <div className="row pt-2 mt-2 mb-4">
           <p className="h2 text-center pt-3">
             Awesome Services For <span className="text-primary">Customer</span>
           </p>
         </div>
-        <div className="row shadow   p-4  mt-2 mb-4">
+        <div className="row shadow   p-4  mt-2 mb-4" id="getStarded">
           <div className="col-md-4">
             <img src={Mobile} alt="Mobile" height={260} width={230} />
           </div>
