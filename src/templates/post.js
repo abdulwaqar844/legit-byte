@@ -11,7 +11,7 @@ const post = ({ data }) => {
     <Layout>
       <Seo title={wpPost.title} />
 
-      <div className="container-fluid ps-0 pe-0  ">
+      <div className="container-fluid ps-1 pe-1 md-ps-0 md-pe-0  ">
         <div style={{ position: "relative" }}>
           <img
             src={wpPost.featuredImage.node.srcSet}
@@ -39,12 +39,12 @@ const post = ({ data }) => {
         </div>
       </div>
       <div className="row w-100 pt-2">
-        <div className="col-md-7 col-12">
-          <div className="row container">
-            <div>
+        <div className="col-md-8 col-12">
+          <div className="row md-ms-3 ps-1 md-ps-2 pt-4">
+            <div className='ps-4 pe-4'>
               <p>{new Date(wpPost.date).toDateString()}</p>
               <p className="h3">{wpPost.title}</p>
-              <div className="d-flex flex-row align-items-center">
+              <div className="d-flex flex-row align-items-center pt-2">
                 <p className="btn btn-outline-dark">
                   <BsFillCircleFill color="yellow" className='pe-2' />
                   {wpPost.categories.nodes[0].name}
@@ -53,7 +53,7 @@ const post = ({ data }) => {
               </div>
 
               {/* <div dangerouslySetInnerHTML={{ __html: wpPost.content }} /> */}
-              <div
+              <div 
                 key={`body`}
                 id="___gatsby"
                 dangerouslySetInnerHTML={{ __html: wpPost.content }}
@@ -61,14 +61,14 @@ const post = ({ data }) => {
             </div>
             <div>
               <h1 className="text-center"> Recent Posts</h1>
-              <div style={{ position: "relative" ,padding:"0px 2px 0px 2px"}}>
+              <div style={{ position: "relative" ,}} className=' col-12'>
                 <img
                   src={
                     allWpPost.nodes[0].featuredImage.node.srcSet ||
                     "https://cdn.pixabay.com/photo/2021/11/04/06/15/woman-6767494_1280.jpg"
                   }
-                  alt="Image"
-                  width="100%"
+                  alt="cover"
+                  width="98%"
                   height="260px"
                   className=""
                 />
@@ -97,8 +97,8 @@ const post = ({ data }) => {
             </div>
           </div>
 
-          <div className="row pt-2 container pb-3">
-            <div className="col-12 col-md-6">
+          <div className="row pt-2  pb-3 align-items-center">
+            <div className="col-12 col-md-6 pb-2 md-pb-0">
               <div style={{ position: "relative",padding:"0px 2px 0px 2px" }}>
                 <img
                   src={
@@ -157,7 +157,7 @@ const post = ({ data }) => {
           </div>
         </div>
 
-        <div className="col-md-5 col-12">
+        <div className="col-md-4 col-12 pt-4">
           <h2 className="text-center">Popular Posts</h2>
           {allWpPost.nodes.slice(0, 5).map(post => {
             return (
@@ -186,13 +186,13 @@ const post = ({ data }) => {
       <div className="container bg-dark pt-3 mb-3">
     
    
-    <div className=" d-flex flex-row pe-5 me-5 align-items-center  justify-content-between">
+    <div className=" d-flex flex-md-row flex-column d-md-column md-pe-5 md-me-5 align-items-center  justify-content-between">
     <div className="pe-3 ">
       <img src={Logo} alt="logo"  />
     </div>
-      <div className="text-secondary d-flex flex-column justify-content-center">
+      <div className="text-secondary d-flex flex-column justify-content-center ">
         <h1>Subscribe for Newstes Articel</h1>
-        <div className="d-flex flex-row justify-content-center pt-4">
+        <div className="d-flex flex-column justify-content-center pt-4 d-md-row">
           <input
             type="email"
             placeholder="Please enter Your email"
