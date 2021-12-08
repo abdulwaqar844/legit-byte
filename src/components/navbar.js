@@ -73,7 +73,7 @@ const Navbar = ({ siteTitle }) => {
               <ExactNavLink to="/services">SERVICES</ExactNavLink>
             </li>
             <li className="nav-item">
-              <ExactNavLink to="/case-studies">CASE STUDIES</ExactNavLink>
+              <ExactNavLink to="#caseStudies">CASE STUDIES</ExactNavLink>
             </li>{" "}
             <li className="nav-item">
               <ExactNavLink to="/careers">CAREERS</ExactNavLink>
@@ -82,7 +82,7 @@ const Navbar = ({ siteTitle }) => {
               <ExactNavLink to="/blog">BLOG</ExactNavLink>
             </li>{" "}
             <li className="nav-item ">
-              <ExactNavLink  to="/get-start">
+              <ExactNavLink  to="#getStarded">
                 <p className="btn btn-outline-primary bg-secondary m-0 "> LET’S TALK</p>
               </ExactNavLink>
             </li>
