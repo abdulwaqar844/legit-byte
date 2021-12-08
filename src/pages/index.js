@@ -20,7 +20,7 @@ const IndexPage = ({
     <div className="container-fluid">
       <div className="row pe-0">
         <div className="col-md-6 col-sm-12">
-          <div className="jumbotron ">
+          <div className="jumbotron ps-5 ">
             <h1 className="display-6 text-primary pt-5 pb-2">
               Delivering Innovative <span className="text-dark"> and</span> Cost
               Effective Digital Solutions
@@ -49,7 +49,7 @@ const IndexPage = ({
           </div>
         </div>
       </div>
-      <div className="container-sm">
+      <div className="container-sm" id="getStarded">
         <div className="row pt-2 mt-2 mb-4">
           <p className="h2 text-center pt-3">
             Awesome Services For <span className="text-primary">Customer</span>
