@@ -55,12 +55,12 @@ const Blog = ({
                   <div className="carousel-caption">
                     <div className="d-flex flex-column">
                       <div>
-                        <p className="btn btn-primary">
+                        <p className="btn btn-sm btn-primary">
                           {post.categories.nodes[0].name}
                         </p>
                       </div>
                       <div className="d-flex flex-column col-6">
-                        <h2 classsName="h4 md-h2">{post.title}</h2>
+                        <h4 >{post.title}</h4>
                         <p> {new Date(post.date).toDateString()}</p>
                       </div>
                     </div>
@@ -83,8 +83,8 @@ const Blog = ({
                   <p className="btn btn-outline-dark">
                     <BsFillCircleFill /> {post.categories.nodes[0].name}
                   </p>
-                  <h5 className="card-title pt-3">{post.title}</h5>
-                  <p className="card-text pt-2">
+                  <p className="card-title pt-3">{post.title}</p>
+                  <p className="card-text pt-2" style={{fontSize:"9px"}}>
                     {new Date(post.date).toDateString()}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ const Blog = ({
                 class=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none"
               >
                 <h3 class="card-title">{nodes[0].title} </h3>
-                <p class="card-text">
+                <p style={{ fontSize: "9px" }}>
                   {new Date(nodes[0].date).toDateString()}
                 </p>
                 <div
@@ -129,17 +129,20 @@ const Blog = ({
             <div className="row pt-2">
               {nodes.slice(1).map(post => {
                 return (
-                  <div className="col-md-6 border pt-2 pb-1" key={post.slug}>
+                  <div className="col-md-6 border p-1" key={post.slug}>
                     <a
                       href={post.slug}
                       className="text-dark text-decoration-none"
                     >
-                      <p className="btn btn-outline-dark">
+                      <p className="btn btn-sm btn-outline-dark">
                         <BsFillCircleFill color="blue" />
                         {post.categories.nodes[0].name.toUpperCase()}
                       </p>
-                      <h5 className="card-title pt-3">{post.title}</h5>
-                      <p> {new Date(post.date).toDateString()}</p>
+                      <p className="card-title pt-3">{post.title}</p>
+                      <p style={{ fontSize: "9px" }}>
+                        {" "}
+                        {new Date(post.date).toDateString()}
+                      </p>
                     </a>
                   </div>
                 )
@@ -261,7 +264,7 @@ const Blog = ({
         </div>
         <a
           to={nodes[3].slug}
-          className=" col-md-6  d-flex flex-row text-decoration-none text-body"
+          className=" col-md-6  d-flex flex-column flex-md-row pt-4 text-decoration-none text-body"
         >
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
@@ -287,7 +290,7 @@ const Blog = ({
         </a>
         <a
           href={nodes[4].slug}
-          className=" col-md-6  d-flex flex-row text-decoration-none text-body "
+          className=" col-md-6  d-flex flex-column flex-md-row pt-4 text-decoration-none text-body "
         >
           <div className=" col d-flex flex-column justify-content-evenly ps-3">
             <div>
@@ -318,7 +321,7 @@ const Blog = ({
     <div className="container bg-dark pt-3 mb-3">
       <div className=" d-flex flex-column flex-md-row pe-md-5 me-md-5 align-items-center  justify-content-between">
         <div className="pe-3 ">
-          <img src={Logo} alt="logo" width="100px" />
+          <img src={Logo} alt="news" width="100px" />
         </div>
         <div className="text-secondary d-flex flex-column justify-content-center ps-3">
           <h1>Subscribe for Newstes Articel</h1>

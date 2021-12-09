@@ -15,7 +15,7 @@ const post = ({ data }) => {
         <div style={{ position: "relative" }}>
           <img
             src={wpPost.featuredImage.node.srcSet}
-            alt="Image"
+            alt={wpPost.title}
             width="100%"
             height="400px"
             className=""
@@ -67,7 +67,7 @@ const post = ({ data }) => {
                     allWpPost.nodes[0].featuredImage.node.srcSet ||
                     "https://cdn.pixabay.com/photo/2021/11/04/06/15/woman-6767494_1280.jpg"
                   }
-                  alt="cover"
+                  alt={allWpPost.nodes[0].featuredImage.node.srcSet}
                   width="98%"
                   height="260px"
                   className=""
@@ -105,7 +105,7 @@ const post = ({ data }) => {
                     allWpPost.nodes[1].featuredImage.node.srcSet ||
                     "https://cdn.pixabay.com/photo/2021/11/04/06/15/woman-6767494_1280.jpg"
                   }
-                  alt="Image"
+                  alt={allWpPost.nodes[1].featuredImage.node.srcSet}
                   width="100%"
                   height="260px"
                   className=""
@@ -133,7 +133,7 @@ const post = ({ data }) => {
                     allWpPost.nodes[2].featuredImage.node.srcSet ||
                     "https://cdn.pixabay.com/photo/2021/11/04/06/15/woman-6767494_1280.jpg"
                   }
-                  alt="Image"
+                  alt={allWpPost.nodes[2].featuredImage.node.srcSet}
                   width="100%"
                   height="260px"
                   className=""

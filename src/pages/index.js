@@ -7,7 +7,7 @@ import Consult from "./../images/consult.svg"
 import Server from "./../images/server.svg"
 import { BsFillCircleFill } from "react-icons/bs"
 import { graphql } from "gatsby"
-
+import testimonial from "./../images/image_81.jpg"
 const IndexPage = ({
   data: {
     allWpPost: { nodes },
@@ -109,7 +109,74 @@ const IndexPage = ({
           </div>
         </div>
       </div>
-
+      <div className="container-sm pt-4" id='caseStudies'>
+        <h1 className='pt-3 text-center'> Testimonials </h1>
+        <div className="row d-flex flex-column flex-md-row justify-content-center pt-3 ">
+        <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial " >
+            <div className="d-flex ">
+              <img
+                src={testimonial}
+                alt="testimonial"
+                height="70px"
+                width="70px"
+                className="rounded-circle"
+              />
+              <div className='ps-2'>
+                <h2>Ara Felicia</h2>
+                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
+                <p>
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
+                  tortor lacus massa maecenas.”
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>    <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial " >
+            <div className="d-flex ">
+              <img
+                src={testimonial}
+                alt="testimonial"
+                height="70px"
+                width="70px"
+                className="rounded-circle"
+              />
+              <div className='ps-2'>
+                <h2>Ara Felicia</h2>
+                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
+                <p>
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
+                  tortor lacus massa maecenas.”
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>    <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial " >
+            <div className="d-flex ">
+              <img
+                src={testimonial}
+                alt="testimonial"
+                height="70px"
+                width="70px"
+                className="rounded-circle"
+              />
+              <div className='ps-2'>
+                <h2>Ara Felicia</h2>
+                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
+                <p>
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
+                  tortor lacus massa maecenas.”
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>
+      
+        </div>
+ 
+      </div>
       <div className="container-sm">
         <div className="row  pt-4 mt-3">
           <div className="col-md-3 border bg-primary text-light pt-2 d-flex flex-column justify-content-center align-items-center">
@@ -143,14 +210,18 @@ const IndexPage = ({
                 className="card-img"
                 alt="..."
                 width="auto"
-                height="480px"
+                height="440px"
               />
               <a
                 href={nodes[0].slug}
                 className=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none"
-              >
+              ><div>   <p className="btn btn-sm btn-light">
+              <BsFillCircleFill color="blue" className='pe-1' />
+              {nodes[0].categories.nodes[0].name.toUpperCase()}
+            </p></div>
+                
                 <p className="h4">{nodes[0].title} </p>
-                <p className="card-text">
+                <p  style={{fontSize:'9px'}}>
                   {new Date(nodes[0].date).toDateString()}
                 </p>
                 <div
@@ -169,17 +240,17 @@ const IndexPage = ({
             <div className="row pt-2">
               {nodes.slice(1).map(post => {
                 return (
-                  <div className="col-md-6 border pt-2 pb-1" key={post.slug}>
+                  <div className="col-md-6 border p-1" key={post.slug}>
                     <a
                       href={post.slug}
                       className="text-dark text-decoration-none"
                     >
-                      <p className="btn btn-outline-dark">
-                        <BsFillCircleFill color="blue" />
+                      <p className="btn btn-sm btn-outline-dark">
+                        <BsFillCircleFill color="blue" className='pe-1' />
                         {post.categories.nodes[0].name.toUpperCase()}
                       </p>
-                      <h5 className="card-title pt-3">{post.title}</h5>
-                      <p> {new Date(post.date).toDateString()}</p>
+                      <p className="card-title pt-3">{post.title}</p>
+                      <p style={{fontSize:"9px"}}> {new Date(post.date).toDateString()}</p>
                     </a>{" "}
                   </div>
                 )
