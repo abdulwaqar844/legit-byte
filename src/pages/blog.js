@@ -244,7 +244,7 @@ const Blog = ({
             class=" d-flex flex-column justify-content-end mb-3 text-decoration-none text-body"
           >
             <div class=" d-flex justify-content-around pt-1 ">
-              <p className="card-text pt-1">
+              <p className="card-text pt-1" style={{fontSize:"9px"}}>
                 {new Date(nodes[1].date).toDateString()}
               </p>
               <p className="btn btn-outline-dark">
@@ -272,7 +272,7 @@ const Blog = ({
                 <BsFillCircleFill /> {nodes[3].categories.nodes[0].name}
               </p>
             </div>
-            <p className="card-text ">
+            <p className="card-text " style={{fontSize:"9px"}}>
               {new Date(nodes[3].date).toDateString()}
             </p>
 
@@ -298,7 +298,7 @@ const Blog = ({
                 <BsFillCircleFill /> {nodes[4].categories.nodes[0].name}
               </p>
             </div>
-            <p className="card-text ">
+            <p className="card-text " style={{fontSize:'9px'}}>
               {new Date(nodes[2].date).toDateString()}
             </p>
             <h2 class="card-title">{nodes[4].title}</h2>

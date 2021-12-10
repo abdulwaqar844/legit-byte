@@ -32,7 +32,7 @@ const post = ({ data }) => {
             <p className="h2">{wpPost.title} </p>
             <div className="d-flex flex-row align-items-center">
               {" "}
-              <p className="pe-3">{new Date(wpPost.date).toDateString()}</p>
+              <p className="pe-3" style={{fontSize:'9px'}}>{new Date(wpPost.date).toDateString()}</p>
               <p className="ps-2">Author: {wpPost.author.node.name}</p>
             </div>
           </div>
@@ -41,8 +41,8 @@ const post = ({ data }) => {
       <div className="row container-fluid pt-2 m-0 ">
         <div className="col-md-8 col-12 md-pe-5">
           <div className="row md-ms-3 ps-1 md-ps-2 pt-4">
-            <div className='ps-4 pe-4'>
-              <p>{new Date(wpPost.date).toDateString()}</p>
+            <div className='ps-4 pe-4' >
+              <p style={{fontSize:'9px'}}>{new Date(wpPost.date).toDateString()}</p>
               <p className="h3">{wpPost.title}</p>
               <div className="d-flex flex-row align-items-center pt-2">
                 <p className="btn btn-outline-dark">
@@ -76,7 +76,7 @@ const post = ({ data }) => {
                   <h3 className="h3 card-caption pt-4">
                     {allWpPost.nodes[0].title}{" "}
                   </h3>
-                  <p className=" ">
+                  <p style={{fontSize:"9px"}}>
                     {new Date(allWpPost.nodes[0].date).toDateString()}
                   </p>
                   {/* <p style={{ fontSize: "12px" }}>
@@ -112,7 +112,7 @@ const post = ({ data }) => {
                 />
                 <a   href={`/${allWpPost.nodes[1].slug}`} className=" text-decoration-none caption caption mb-0  feature-caption  d-flex flex-column text-light justify-content-center card-img-overlay">
                   <h4> {allWpPost.nodes[1].title} </h4>
-                  <p>{new Date(allWpPost.nodes[1].date).toDateString()}</p>
+                  <p style={{fontSize:'9px'}}>{new Date(allWpPost.nodes[1].date).toDateString()}</p>
                   {/* <div
                     className="d-none d-md-none d-lg-block"
                     dangerouslySetInnerHTML={{
@@ -140,7 +140,7 @@ const post = ({ data }) => {
                 />
                 <a  href={`/${allWpPost.nodes[2].slug}`} className=" text-decoration-none caption caption mb-0  feature-caption  d-flex flex-column text-light justify-content-center card-img-overlay">
                   <h4 className='pt-4'> {allWpPost.nodes[2].title} </h4>
-                  <p>{new Date(allWpPost.nodes[2].date).toDateString()}</p>
+                  <p style={{fontSize:'9px'}}>{new Date(allWpPost.nodes[2].date).toDateString()}</p>
                   {/* <div
                     className="d-none d-md-none d-lg-block"
                     dangerouslySetInnerHTML={{
