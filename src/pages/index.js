@@ -8,6 +8,7 @@ import Server from "./../images/server.svg"
 import { BsFillCircleFill } from "react-icons/bs"
 import { graphql } from "gatsby"
 import testimonial from "./../images/image_81.jpg"
+import CaseStudies from "../components/caseStudies/caseStudies"
 const IndexPage = ({
   data: {
     allWpPost: { nodes },
@@ -15,10 +16,10 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Seo title="Home" />
-    <div className="container-fluid">
-      <div className="row pe-0">
+    <div className="container-fluid p-0">
+      <div className="row p-0">
         <div className="col-md-6 col-sm-12">
-          <div className="jumbotron ps-5 ">
+          <div className="jumbotron ps-2 ps-md-4 ">
             <h1 className="display-6 text-primary pt-5 pb-2">
               Delivering Innovative <span className="text-dark"> and</span> Cost
               Effective Digital Solutions
@@ -109,73 +110,75 @@ const IndexPage = ({
           </div>
         </div>
       </div>
-      <div className="container-sm pt-4" id='caseStudies'>
-        <h1 className='pt-3 text-center'> Testimonials </h1>
-        <div className="row d-flex flex-column flex-md-row justify-content-center pt-3 ">
-        <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
-            <div class="card-body bg-testimonial " >
-            <div className="d-flex ">
-              <img
-                src={testimonial}
-                alt="testimonial"
-                height="70px"
-                width="70px"
-                className="rounded-circle"
-              />
-              <div className='ps-2'>
-                <h2>Ara Felicia</h2>
-                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
-                  tortor lacus massa maecenas.”
-                </p>
+      <div className="container-sm pt-4" id="caseStudies">
+      <h1 className="pt-3 text-center"> Testimonials </h1>
+
+        <CaseStudies />
+        {/* <div className="row d-flex flex-column flex-md-row justify-content-center pt-3 ">
+          <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial ">
+              <div className="d-flex ">
+                <img
+                  src={testimonial}
+                  alt="testimonial"
+                  height="70px"
+                  width="70px"
+                  className="rounded-circle"
+                />
+                <div className="ps-2">
+                  <h2>Ara Felicia</h2>
+                  <p className="card-subtitle mb-2 text-muted"> UI Designer</p>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Leo tortor lacus massa maecenas.”
+                  </p>
+                </div>
               </div>
-            </div>
-            </div>
-          </div>    <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
-            <div class="card-body bg-testimonial " >
-            <div className="d-flex ">
-              <img
-                src={testimonial}
-                alt="testimonial"
-                height="70px"
-                width="70px"
-                className="rounded-circle"
-              />
-              <div className='ps-2'>
-                <h2>Ara Felicia</h2>
-                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
-                  tortor lacus massa maecenas.”
-                </p>
-              </div>
-            </div>
-            </div>
-          </div>    <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
-            <div class="card-body bg-testimonial " >
-            <div className="d-flex ">
-              <img
-                src={testimonial}
-                alt="testimonial"
-                height="70px"
-                width="70px"
-                className="rounded-circle"
-              />
-              <div className='ps-2'>
-                <h2>Ara Felicia</h2>
-                <p className='card-subtitle mb-2 text-muted'> UI Designer</p>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo
-                  tortor lacus massa maecenas.”
-                </p>
-              </div>
-            </div>
             </div>
           </div>
-      
-        </div>
- 
+          <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial ">
+              <div className="d-flex ">
+                <img
+                  src={testimonial}
+                  alt="testimonial"
+                  height="70px"
+                  width="70px"
+                  className="rounded-circle"
+                />
+                <div className="ps-2">
+                  <h2>Ara Felicia</h2>
+                  <p className="card-subtitle mb-2 text-muted"> UI Designer</p>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Leo tortor lacus massa maecenas.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card col-md-6 col-12 align-items-center border-0 p-4 ">
+            <div class="card-body bg-testimonial ">
+              <div className="d-flex ">
+                <img
+                  src={testimonial}
+                  alt="testimonial"
+                  height="70px"
+                  width="70px"
+                  className="rounded-circle"
+                />
+                <div className="ps-2">
+                  <h2>Ara Felicia</h2>
+                  <p className="card-subtitle mb-2 text-muted"> UI Designer</p>
+                  <p>
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Leo tortor lacus massa maecenas.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
       <div className="container-sm">
         <div className="row  pt-4 mt-3">
@@ -215,13 +218,17 @@ const IndexPage = ({
               <a
                 href={nodes[0].slug}
                 className=" card-img-overlay d-flex flex-column justify-content-end text-light text-decoration-none"
-              ><div>   <p className="btn btn-sm btn-light">
-              <BsFillCircleFill color="blue" className='pe-1' />
-              {nodes[0].categories.nodes[0].name.toUpperCase()}
-            </p></div>
-                
+              >
+                <div>
+                  {" "}
+                  <p className="btn btn-sm btn-light">
+                    <BsFillCircleFill color="blue" className="pe-1" />
+                    {nodes[0].categories.nodes[0].name.toUpperCase()}
+                  </p>
+                </div>
+
                 <p className="h4">{nodes[0].title} </p>
-                <p  style={{fontSize:'9px'}}>
+                <p style={{ fontSize: "9px" }}>
                   {new Date(nodes[0].date).toDateString()}
                 </p>
                 <div
@@ -234,7 +241,7 @@ const IndexPage = ({
               </a>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 d-none d-md-block">
             <h3 className="text-center">Popular Post</h3>
 
             <div className="row pt-2">
@@ -246,11 +253,14 @@ const IndexPage = ({
                       className="text-dark text-decoration-none"
                     >
                       <p className="btn btn-sm btn-outline-dark">
-                        <BsFillCircleFill color="blue" className='pe-1' />
+                        <BsFillCircleFill color="blue" className="pe-1" />
                         {post.categories.nodes[0].name.toUpperCase()}
                       </p>
-                      <p className="card-title pt-3">{post.title}</p>
-                      <p style={{fontSize:"9px"}}> {new Date(post.date).toDateString()}</p>
+                      <h5 className="card-title pt-3">{post.title}</h5>
+                      <p style={{ fontSize: "9px" }}>
+                        {" "}
+                        {new Date(post.date).toDateString()}
+                      </p>
                     </a>{" "}
                   </div>
                 )
