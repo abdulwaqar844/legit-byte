@@ -53,7 +53,7 @@ const post = ({ data }) => {
               </div>
 
               {/* <div dangerouslySetInnerHTML={{ __html: wpPost.content }} /> */}
-              <div 
+              <div  className="postDetail"
                 key={`body`}
                 id="___gatsby"
                 dangerouslySetInnerHTML={{ __html: wpPost.content }}
@@ -157,7 +157,7 @@ const post = ({ data }) => {
           </div>
         </div>
 
-        <div className="col-md-4 col-12 pt-4">
+        <div className="col-md-4 col-12 pt-4 d-none d-md-block">
           <h2 className="text-center">Popular Posts</h2>
           {allWpPost.nodes.slice(0, 5).map(post => {
             return (

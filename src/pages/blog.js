@@ -83,8 +83,8 @@ const Blog = ({
                   <p className="btn btn-outline-dark">
                     <BsFillCircleFill /> {post.categories.nodes[0].name}
                   </p>
-                  <p className="card-title pt-3">{post.title}</p>
-                  <p className="card-text pt-2" style={{fontSize:"9px"}}>
+                  <h5 className="card-title pt-1">{post.title}</h5>
+                  <p className="card-text pt-1" style={{fontSize:"9px"}}>
                     {new Date(post.date).toDateString()}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ const Blog = ({
                 class="card-img"
                 alt="..."
                 width="auto"
-                height="480px"
+                height="380px"
               />
               <a
                 href={`/${nodes[0].slug}`}
@@ -123,22 +123,22 @@ const Blog = ({
               </a>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 d-none d-md-block">
             <h3 className="text-center">Popular Post</h3>
 
             <div className="row pt-2">
               {nodes.slice(1).map(post => {
                 return (
-                  <div className="col-md-6 border p-1" key={post.slug}>
+                  <div className="col-md-6 border p-2" key={post.slug}>
                     <a
                       href={post.slug}
                       className="text-dark text-decoration-none"
                     >
-                      <p className="btn btn-sm btn-outline-dark">
-                        <BsFillCircleFill color="blue" />
-                        {post.categories.nodes[0].name.toUpperCase()}
-                      </p>
-                      <p className="card-title pt-3">{post.title}</p>
+                      <div >
+                     <button className="btn btn-sm btn-outline-dark "> <BsFillCircleFill color="blue" className="me-2" />
+                        {post.categories.nodes[0].name.toUpperCase()}</button>  
+                      </div>
+                      <h5 className="card-title pt-3">{post.title}</h5>
                       <p style={{ fontSize: "9px" }}>
                         {" "}
                         {new Date(post.date).toDateString()}
@@ -284,7 +284,7 @@ const Blog = ({
               class="card-img"
               alt="..."
               width="auto"
-              height="420px"
+              height="380px"
             />
           </div>
         </a>
@@ -309,7 +309,7 @@ const Blog = ({
               class="card-img"
               alt="..."
               width="auto"
-              height="420px"
+              height="380px"
             />
           </div>
         </a>
@@ -324,7 +324,8 @@ const Blog = ({
           <img src={Logo} alt="news" width="100px" />
         </div>
         <div className="text-secondary d-flex flex-column justify-content-center ps-3">
-          <h1>Subscribe for Newstes Articel</h1>
+          <h1 className="
+          text-center">Subscribe for Newstes Articel</h1>
           <div className="d-flex flex-column flex-md-row justify-content-center pt-4">
             <input
               type="email"
