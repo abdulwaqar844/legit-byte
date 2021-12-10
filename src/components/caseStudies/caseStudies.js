@@ -5,7 +5,7 @@ import testimonial from "./../../images/image_81.jpg"
 
 const caseStudies = () => {
   return (
-    <div className="container-fluid p-0 d-none d-md-block">
+    <div className="container-fluid p-0">
       <Carousel  indicators={false} >
       <Carousel.Item className="bg-none">
           <div className="row d-flex flex-column flex-md-row justify-content-center pt-3 ">
