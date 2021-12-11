@@ -15,7 +15,7 @@ const Navbar = ({ siteTitle }) => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-none navbar-expand-md navbar-fixed-top">
       <div className="container-fluid align-items-center"> 
-        <Link to="/" className="navbar-brand " href="#">
+        <Link to="/" className="navbar-brand " >
           <svg
             width="50"
             height="50"
