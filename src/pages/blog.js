@@ -117,7 +117,7 @@ const Blog = ({
                   {new Date(nodes[0].date).toDateString()}
                 </p>
                 <div
-                  className="p"
+                  className="p d-none d-md-block"
                   dangerouslySetInnerHTML={{ __html: nodes[1].excerpt } || ""}
                 />
               </a>

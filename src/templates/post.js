@@ -192,7 +192,7 @@ const post = ({ data }) => {
     </div>
       <div className="text-secondary d-flex flex-column justify-content-center ">
         <h1>Subscribe for Newstes Articel</h1>
-        <div className="d-flex flex-column justify-content-center pt-4 d-md-row">
+        <div className="d-flex flex-column flex-md-row justify-content-center pt-4 ">
           <input
             type="email"
             placeholder="Please enter Your email"
